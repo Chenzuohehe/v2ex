@@ -19,6 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.mainTableView.opaque = NO;
+    self.mainTableView.backgroundColor = [UIColor clearColor];
+    self.mainTableView.backgroundView = nil;
+//    self.mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.mainTableView.bounces = NO;
 }
 
 - (void)didReceiveMemoryWarning {

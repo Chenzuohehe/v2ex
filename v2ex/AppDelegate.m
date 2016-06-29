@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import "BaseViewController.h"
 
+#import "MainViewController.h"
+#import "LeftMenuViewController.h"
+#import "RightMenuViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -22,10 +26,27 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    BaseViewController * rootViewController = [[BaseViewController alloc]initWithNibName:@"BaseViewController" bundle:nil];
+    MainViewController * rootViewController = [[MainViewController alloc]init];
     UINavigationController * navigationController = [[UINavigationController alloc]initWithRootViewController:rootViewController];
     
+    LeftMenuViewController *leftMenuViewController = [[LeftMenuViewController alloc] init];
+    RightMenuViewController *rightMenuViewController = [[RightMenuViewController alloc] init];
     
+    RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:navigationController
+                                                                    leftMenuViewController:leftMenuViewController
+                                                                   rightMenuViewController:rightMenuViewController];
+    sideMenuViewController.backgroundImage = [UIImage imageNamed:@"Stars"];
+    sideMenuViewController.menuPreferredStatusBarStyle = 1; // UIStatusBarStyleLightContent
+    sideMenuViewController.delegate = self;
+    sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
+    sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
+    sideMenuViewController.contentViewShadowOpacity = 0.6;
+    sideMenuViewController.contentViewShadowRadius = 12;
+    sideMenuViewController.contentViewShadowEnabled = YES;
+    self.window.rootViewController = sideMenuViewController;
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

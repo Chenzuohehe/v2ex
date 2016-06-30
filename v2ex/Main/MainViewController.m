@@ -7,7 +7,7 @@
 //
 
 #import "MainViewController.h"
-#import "AFHTTPSessionManager.h"
+
 
 #import <UITableView+FDTemplateLayoutCell.h>
 
@@ -38,7 +38,7 @@
     imageView.image = [UIImage imageNamed:@"Balloon"];
     [self.view addSubview:imageView];
     
-    [self loadData];
+    [self loadHotData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -101,7 +101,7 @@
     return cell;
 }
 
-- (void)loadData
+- (void)loadHotData
 {
     NSString * uri = @"https://www.v2ex.com/api/topics/hot.json";
     NSDictionary *param = [NSDictionary dictionary];
@@ -109,6 +109,8 @@
     [manager GET:uri parameters:param progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        
         
         NSLog(@"%@",responseObject);
         

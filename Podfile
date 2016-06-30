@@ -6,4 +6,6 @@ pod 'UMengAnalytics-NO-IDFA'
 pod 'HyphenateFullSDK', :git => 'https://github.com/easemob/hyphenate-full-cocoapods.git'
 pod 'RESideMenu', '~> 4.0.7'
 pod 'UITableView+FDTemplateLayoutCell', '~> 1.4’
+pod 'MJRefresh'
+
 end

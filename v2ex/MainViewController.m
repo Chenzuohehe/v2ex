@@ -7,6 +7,9 @@
 //
 
 #import "MainViewController.h"
+#import "AFHTTPSessionManager.h"
+
+#import <UITableView+FDTemplateLayoutCell.h>
 
 @interface MainViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
@@ -34,6 +37,8 @@
     imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     imageView.image = [UIImage imageNamed:@"Balloon"];
     [self.view addSubview:imageView];
+    
+    [self loadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,7 +60,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     return 44;
+//    return [tableView fd_heightForCellWithIdentifier:@"identifer" cacheByIndexPath:indexPath configuration:^(id cell) {
+//        // 配置 cell 的数据源，和 "cellForRow" 干的事一致，比如：
+////        cell.entity = self.feedEntities[indexPath.row];
+//    }];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -89,5 +99,25 @@
     cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
     
     return cell;
+}
+
+- (void)loadData
+{
+    NSString * uri = @"https://www.v2ex.com/api/topics/hot.json";
+    NSDictionary *param = [NSDictionary dictionary];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:uri parameters:param progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        
+        
+    }];
+    
+    
 }
 @end

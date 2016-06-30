@@ -18,7 +18,7 @@
     [super viewDidLoad];
     
     
-    self.title = @"First Controller";
+    self.title = @"V2EX";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left"
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self

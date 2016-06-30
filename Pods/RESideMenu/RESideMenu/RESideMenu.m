@@ -289,7 +289,6 @@
         
         if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
             self.contentViewContainer.center = CGPointMake((UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]) ? self.contentViewInLandscapeOffsetCenterX + CGRectGetWidth(self.view.frame) : self.contentViewInPortraitOffsetCenterX + CGRectGetWidth(self.view.frame) * 0.6), self.contentViewContainer.center.y);
-            NSLog(@"flag1:%@",NSStringFromCGPoint(self.contentViewContainer.center));
         } else {
             self.contentViewContainer.center = CGPointMake((UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]) ? self.contentViewInLandscapeOffsetCenterX + CGRectGetHeight(self.view.frame) : self.contentViewInPortraitOffsetCenterX + CGRectGetWidth(self.view.frame) * 0.6), self.contentViewContainer.center.y);
         }
@@ -333,7 +332,6 @@
             self.contentViewContainer.transform = CGAffineTransformIdentity;
         }
         self.contentViewContainer.center = CGPointMake((UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]) ? -self.contentViewInLandscapeOffsetCenterX : -self.contentViewInPortraitOffsetCenterX + CGRectGetWidth(self.view.frame) * 0.4), self.contentViewContainer.center.y);
-        NSLog(@"flag1:%@",NSStringFromCGPoint(self.contentViewContainer.center));
         self.menuViewContainer.alpha = !self.fadeMenuView ?: 1.0f;
         self.menuViewContainer.transform = CGAffineTransformIdentity;
         if (self.scaleBackgroundImageView)

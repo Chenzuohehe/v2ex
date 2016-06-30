@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
+                <outlet property="mainTableView" destination="oiu-w3-1vJ" id="zjD-nv-Jp6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +15,23 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oiu-w3-1vJ">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="nR4-YX-7uj"/>
+                        <outlet property="delegate" destination="-1" id="bwS-xn-Agb"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="oiu-w3-1vJ" secondAttribute="trailing" id="6wq-jf-SHe"/>
+                <constraint firstAttribute="bottom" secondItem="oiu-w3-1vJ" secondAttribute="bottom" id="UZg-Vs-CUS"/>
+                <constraint firstItem="oiu-w3-1vJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iXu-RP-j5t"/>
+                <constraint firstItem="oiu-w3-1vJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uHH-eO-XJQ"/>
+            </constraints>
         </view>
     </objects>
 </document>

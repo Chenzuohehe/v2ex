@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 
 @interface MainViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 
 @end
 
@@ -41,5 +42,52 @@
 }
 
 
+#pragma mark -
+#pragma mark UITableView Delegate
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
+#pragma mark -
+#pragma mark UITableView Datasource
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex
+{
+    return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell.backgroundColor = [UIColor clearColor];
+        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
+        cell.textLabel.textColor = [UIColor blackColor];
+        cell.textLabel.highlightedTextColor = [UIColor lightGrayColor];
+        cell.selectedBackgroundView = [[UIView alloc] init];
+    }
+    
+    NSArray *titles = @[@"信息展示", @"信息展示", @"信息展示", @"信息展示", @"信息展示"];
+    NSArray *images = @[@"IconHome", @"IconCalendar", @"IconProfile", @"IconSettings", @"IconEmpty"];
+    cell.textLabel.text = titles[indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
+    
+    return cell;
+}
 @end

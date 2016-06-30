@@ -122,7 +122,16 @@
 			isa = PBXGroup;
 			children = (
 				0410FDFB1D23B8E60080C4DC /* Custom */,
-				0410FDFA1D23B7E30080C4DC /* Main */,
+				0410FE0F1D23C5E30080C4DC /* Main */,
+				0410FE001D23BC190080C4DC /* MainViewController.h */,
+				0410FE011D23BC190080C4DC /* MainViewController.m */,
+				0410FE021D23BC190080C4DC /* MainViewController.xib */,
+				0410FE051D23C18C0080C4DC /* LeftMenuViewController.h */,
+				0410FE061D23C18C0080C4DC /* LeftMenuViewController.m */,
+				0410FE071D23C18C0080C4DC /* LeftMenuViewController.xib */,
+				0410FE0A1D23C1A30080C4DC /* RightMenuViewController.h */,
+				0410FE0B1D23C1A30080C4DC /* RightMenuViewController.m */,
+				0410FE0C1D23C1A30080C4DC /* RightMenuViewController.xib */,
 				0410FDC71D239D0A0080C4DC /* AppDelegate.h */,
 				0410FDC81D239D0A0080C4DC /* AppDelegate.m */,
 				0410FDD01D239D0A0080C4DC /* Assets.xcassets */,
@@ -159,14 +168,6 @@
 			path = v2exUITests;
 			sourceTree = "<group>";
 		};
-		0410FDFA1D23B7E30080C4DC /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				0410FDFF1D23BBDA0080C4DC /* Controllers */,
-			);
-			name = Main;
-			sourceTree = "<group>";
-		};
 		0410FDFB1D23B8E60080C4DC /* Custom */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,20 +177,11 @@
 			name = Custom;
 			sourceTree = "<group>";
 		};
-		0410FDFF1D23BBDA0080C4DC /* Controllers */ = {
+		0410FE0F1D23C5E30080C4DC /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				0410FE001D23BC190080C4DC /* MainViewController.h */,
-				0410FE011D23BC190080C4DC /* MainViewController.m */,
-				0410FE021D23BC190080C4DC /* MainViewController.xib */,
-				0410FE051D23C18C0080C4DC /* LeftMenuViewController.h */,
-				0410FE061D23C18C0080C4DC /* LeftMenuViewController.m */,
-				0410FE071D23C18C0080C4DC /* LeftMenuViewController.xib */,
-				0410FE0A1D23C1A30080C4DC /* RightMenuViewController.h */,
-				0410FE0B1D23C1A30080C4DC /* RightMenuViewController.m */,
-				0410FE0C1D23C1A30080C4DC /* RightMenuViewController.xib */,
 			);
-			name = Controllers;
+			name = Main;
 			sourceTree = "<group>";
 		};
 		55D6F424DAB615B4F5C5960A /* Pods */ = {

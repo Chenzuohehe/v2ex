@@ -10,4 +10,13 @@
 
 @interface MainTableViewCell : UITableViewCell
 
+
+@property (weak, nonatomic) IBOutlet UIImageView *headImageView;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tagLabel;
+@property (weak, nonatomic) IBOutlet UIButton *replyNumberButton;
+@property (weak, nonatomic) IBOutlet UILabel *replyStatusLabel;
+
+
+
 @end

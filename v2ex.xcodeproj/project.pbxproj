@@ -13,6 +13,10 @@
 		0410FDD41D239D0A0080C4DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0410FDD21D239D0A0080C4DC /* LaunchScreen.storyboard */; };
 		0410FDDF1D239D0A0080C4DC /* v2exTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0410FDDE1D239D0A0080C4DC /* v2exTests.m */; };
 		0410FDEA1D239D0A0080C4DC /* v2exUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0410FDE91D239D0A0080C4DC /* v2exUITests.m */; };
+		04BEADA11D260FEE0058BF56 /* FeedEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEADA01D260FEE0058BF56 /* FeedEntity.m */; };
+		04BEADA41D2615AC0058BF56 /* CommonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEADA31D2615AC0058BF56 /* CommonUtil.m */; };
+		04BEADAD1D264B260058BF56 /* NodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEADAC1D264B260058BF56 /* NodeModel.m */; };
+		04BEADB01D264B300058BF56 /* MemberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEADAF1D264B300058BF56 /* MemberModel.m */; };
 		2E235570DEFDB772E022AC1E /* libPods-v2ex.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B691E2FF96C807D19E869AF9 /* libPods-v2ex.a */; };
 		4E138D8A1D255B3100AE5FF3 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E138D831D255B3100AE5FF3 /* MainViewController.m */; };
 		4E138D8B1D255B3100AE5FF3 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E138D841D255B3100AE5FF3 /* MainViewController.xib */; };
@@ -56,6 +60,14 @@
 		0410FDE51D239D0A0080C4DC /* v2exUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = v2exUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0410FDE91D239D0A0080C4DC /* v2exUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = v2exUITests.m; sourceTree = "<group>"; };
 		0410FDEB1D239D0A0080C4DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04BEAD9F1D260FEE0058BF56 /* FeedEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedEntity.h; sourceTree = "<group>"; };
+		04BEADA01D260FEE0058BF56 /* FeedEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedEntity.m; sourceTree = "<group>"; };
+		04BEADA21D2615AC0058BF56 /* CommonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtil.h; sourceTree = "<group>"; };
+		04BEADA31D2615AC0058BF56 /* CommonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtil.m; sourceTree = "<group>"; };
+		04BEADAB1D264B260058BF56 /* NodeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeModel.h; sourceTree = "<group>"; };
+		04BEADAC1D264B260058BF56 /* NodeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeModel.m; sourceTree = "<group>"; };
+		04BEADAE1D264B300058BF56 /* MemberModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberModel.h; sourceTree = "<group>"; };
+		04BEADAF1D264B300058BF56 /* MemberModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberModel.m; sourceTree = "<group>"; };
 		2E103AE33E32582A228905EF /* Pods-v2ex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-v2ex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-v2ex/Pods-v2ex.debug.xcconfig"; sourceTree = "<group>"; };
 		2F782EDFABF2C5278796AC09 /* Pods-v2ex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-v2ex.release.xcconfig"; path = "Pods/Target Support Files/Pods-v2ex/Pods-v2ex.release.xcconfig"; sourceTree = "<group>"; };
 		4E138D821D255B3100AE5FF3 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -192,6 +204,14 @@
 			children = (
 				4E138D921D255E1C00AE5FF3 /* BaseViewController.h */,
 				4E138D931D255E1C00AE5FF3 /* BaseViewController.m */,
+				04BEAD9F1D260FEE0058BF56 /* FeedEntity.h */,
+				04BEADA01D260FEE0058BF56 /* FeedEntity.m */,
+				04BEADAE1D264B300058BF56 /* MemberModel.h */,
+				04BEADAF1D264B300058BF56 /* MemberModel.m */,
+				04BEADAB1D264B260058BF56 /* NodeModel.h */,
+				04BEADAC1D264B260058BF56 /* NodeModel.m */,
+				04BEADA21D2615AC0058BF56 /* CommonUtil.h */,
+				04BEADA31D2615AC0058BF56 /* CommonUtil.m */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -417,13 +437,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04BEADA11D260FEE0058BF56 /* FeedEntity.m in Sources */,
 				0410FDC91D239D0A0080C4DC /* AppDelegate.m in Sources */,
 				4E138D8A1D255B3100AE5FF3 /* MainViewController.m in Sources */,
 				4E138DA41D25611600AE5FF3 /* MainTableViewCell.m in Sources */,
+				04BEADA41D2615AC0058BF56 /* CommonUtil.m in Sources */,
 				4E138D981D255E7700AE5FF3 /* LeftMenuViewController.m in Sources */,
 				4E138D941D255E1C00AE5FF3 /* BaseViewController.m in Sources */,
 				4E138D9D1D255E8E00AE5FF3 /* RightMenuViewController.m in Sources */,
 				0410FDC61D239D0A0080C4DC /* main.m in Sources */,
+				04BEADB01D264B300058BF56 /* MemberModel.m in Sources */,
+				04BEADAD1D264B260058BF56 /* NodeModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

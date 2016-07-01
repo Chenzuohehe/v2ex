@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UITableView+FDTemplateLayoutCell.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,7 +37,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>547F73C6A9942B1C915740D8AD249C67</key>
+		<key>1FEE692BE58ABF956482BF000249CCE8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C42E8D75D24A84DF3202BF2F69B8242</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,17 +52,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>74A32DEC555392E1C3649137B81CCB75</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>928353533005A4198EBDA5B700D37B64</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E85B1ACDB7D758466AC59840425C36F5</key>
+		<key>DA7EDA6C77F6985792F97799D19C6592</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC1C09815E88D13FC627696BBF76EABD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -21,6 +21,8 @@
 		4E138D991D255E7700AE5FF3 /* LeftMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E138D971D255E7700AE5FF3 /* LeftMenuViewController.xib */; };
 		4E138D9D1D255E8E00AE5FF3 /* RightMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E138D9B1D255E8E00AE5FF3 /* RightMenuViewController.m */; };
 		4E138D9E1D255E8E00AE5FF3 /* RightMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E138D9C1D255E8E00AE5FF3 /* RightMenuViewController.xib */; };
+		4E138DA41D25611600AE5FF3 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E138DA21D25611600AE5FF3 /* MainTableViewCell.m */; };
+		4E138DA51D25611600AE5FF3 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E138DA31D25611600AE5FF3 /* MainTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,9 @@
 		4E138D9A1D255E8E00AE5FF3 /* RightMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightMenuViewController.h; sourceTree = "<group>"; };
 		4E138D9B1D255E8E00AE5FF3 /* RightMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightMenuViewController.m; sourceTree = "<group>"; };
 		4E138D9C1D255E8E00AE5FF3 /* RightMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightMenuViewController.xib; sourceTree = "<group>"; };
+		4E138DA11D25611600AE5FF3 /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
+		4E138DA21D25611600AE5FF3 /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
+		4E138DA31D25611600AE5FF3 /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		B691E2FF96C807D19E869AF9 /* libPods-v2ex.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-v2ex.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -175,6 +180,9 @@
 		4E138D8E1D255D1000AE5FF3 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				4E138DA11D25611600AE5FF3 /* MainTableViewCell.h */,
+				4E138DA21D25611600AE5FF3 /* MainTableViewCell.m */,
+				4E138DA31D25611600AE5FF3 /* MainTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -331,6 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E138DA51D25611600AE5FF3 /* MainTableViewCell.xib in Resources */,
 				0410FDD41D239D0A0080C4DC /* LaunchScreen.storyboard in Resources */,
 				0410FDD11D239D0A0080C4DC /* Assets.xcassets in Resources */,
 				4E138D991D255E7700AE5FF3 /* LeftMenuViewController.xib in Resources */,
@@ -410,6 +419,7 @@
 			files = (
 				0410FDC91D239D0A0080C4DC /* AppDelegate.m in Sources */,
 				4E138D8A1D255B3100AE5FF3 /* MainViewController.m in Sources */,
+				4E138DA41D25611600AE5FF3 /* MainTableViewCell.m in Sources */,
 				4E138D981D255E7700AE5FF3 /* LeftMenuViewController.m in Sources */,
 				4E138D941D255E1C00AE5FF3 /* BaseViewController.m in Sources */,
 				4E138D9D1D255E8E00AE5FF3 /* RightMenuViewController.m in Sources */,

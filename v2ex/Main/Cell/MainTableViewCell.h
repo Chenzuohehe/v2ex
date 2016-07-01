@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FeedEntity.h"
 
 @interface MainTableViewCell : UITableViewCell
 
+@property (strong , nonatomic) FeedEntity * detail;
 
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
@@ -17,6 +19,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *replyNumberButton;
 @property (weak, nonatomic) IBOutlet UILabel *replyStatusLabel;
 
-
+- (void)setFeedEntity:(FeedEntity *)detail;
 
 @end

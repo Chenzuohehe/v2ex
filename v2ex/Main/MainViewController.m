@@ -7,7 +7,8 @@
 //
 
 #import "MainViewController.h"
-
+#import "FeedEntity.h"
+#import "MainTableViewCell.h"
 
 #import <UITableView+FDTemplateLayoutCell.h>
 
@@ -39,11 +40,13 @@
     [self.view addSubview:imageView];
     
     [self loadHotData];
+    [self registerCell];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
+
+- (void)registerCell
+{
+    [self.mainTableView registerNib:[UINib nibWithNibName:@"MainTableViewCell" bundle:nil] forCellReuseIdentifier:@"Main"];
 }
 
 
@@ -80,23 +83,27 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"Cell";
+//    static NSString *cellIdentifier = @"Cell";
+//    
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+//    
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+//        cell.backgroundColor = [UIColor clearColor];
+//        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
+//        cell.textLabel.textColor = [UIColor blackColor];
+//        cell.textLabel.highlightedTextColor = [UIColor lightGrayColor];
+//        cell.selectedBackgroundView = [[UIView alloc] init];
+//    }
+//    
+//    NSArray *titles = @[@"信息展示", @"信息展示", @"信息展示", @"信息展示", @"信息展示"];
+//    NSArray *images = @[@"IconHome", @"IconCalendar", @"IconProfile", @"IconSettings", @"IconEmpty"];
+//    cell.textLabel.text = titles[indexPath.row];
+//    cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    MainTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"Main"];
     
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        cell.backgroundColor = [UIColor clearColor];
-        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
-        cell.textLabel.textColor = [UIColor blackColor];
-        cell.textLabel.highlightedTextColor = [UIColor lightGrayColor];
-        cell.selectedBackgroundView = [[UIView alloc] init];
-    }
     
-    NSArray *titles = @[@"信息展示", @"信息展示", @"信息展示", @"信息展示", @"信息展示"];
-    NSArray *images = @[@"IconHome", @"IconCalendar", @"IconProfile", @"IconSettings", @"IconEmpty"];
-    cell.textLabel.text = titles[indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
     
     return cell;
 }

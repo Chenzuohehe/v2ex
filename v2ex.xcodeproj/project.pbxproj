@@ -68,6 +68,7 @@
 		04BEADAC1D264B260058BF56 /* NodeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeModel.m; sourceTree = "<group>"; };
 		04BEADAE1D264B300058BF56 /* MemberModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberModel.h; sourceTree = "<group>"; };
 		04BEADAF1D264B300058BF56 /* MemberModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberModel.m; sourceTree = "<group>"; };
+		04BEADB11D26590A0058BF56 /* Consts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Consts.h; sourceTree = "<group>"; };
 		2E103AE33E32582A228905EF /* Pods-v2ex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-v2ex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-v2ex/Pods-v2ex.debug.xcconfig"; sourceTree = "<group>"; };
 		2F782EDFABF2C5278796AC09 /* Pods-v2ex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-v2ex.release.xcconfig"; path = "Pods/Target Support Files/Pods-v2ex/Pods-v2ex.release.xcconfig"; sourceTree = "<group>"; };
 		4E138D821D255B3100AE5FF3 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -212,6 +213,7 @@
 				04BEADAC1D264B260058BF56 /* NodeModel.m */,
 				04BEADA21D2615AC0058BF56 /* CommonUtil.h */,
 				04BEADA31D2615AC0058BF56 /* CommonUtil.m */,
+				04BEADB11D26590A0058BF56 /* Consts.h */,
 			);
 			path = Custom;
 			sourceTree = "<group>";

@@ -12,6 +12,7 @@
 #include <sys/types.h>
 #include <sys/sysctl.h>
 #import "UIImageView+WebCache.h"
+#import "Consts.h"
 //#import "UserInfo.h"
 
 static CommonUtil *defaultUtil = nil;
@@ -165,6 +166,27 @@ static CommonUtil *defaultUtil = nil;
     
     return YES;
     
+}
+
++ (NSString *)stringWithUrl:(NSString *)url Dic:(NSDictionary *)dict{
+    
+    NSMutableString * urlString = [NSMutableString string];
+    [urlString appendString:REQUEST_HOST];
+    [urlString appendString:url];
+    NSArray * dictKey = [dict allKeys];
+    for (int i = 0; i<[dict count]; i++) {
+        
+        NSString * key = dictKey[i];
+        NSString * value = dict[key];
+        
+        if (i == 0) {
+            [urlString appendString:[NSString stringWithFormat:@"?%@=%@",key,value]];
+        }else{
+            [urlString appendString:[NSString stringWithFormat:@"&%@=%@",key,value]];
+        }
+    }
+    
+    return urlString;
 }
 
 /**

@@ -20,6 +20,7 @@
 
 @property (copy , nonatomic  ) NSDictionary * member;
 @property (copy , nonatomic  ) NSDictionary * node;
+
 @property (assign , nonatomic) NSNumber     * replies;
 @property (copy , nonatomic  ) NSString     * title;
 @property (copy , nonatomic  ) NSString     * url;

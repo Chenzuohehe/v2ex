@@ -36,7 +36,7 @@
      @property (weak, nonatomic) IBOutlet UIButton *replyNumberButton;
      @property (weak, nonatomic) IBOutlet UILabel *replyStatusLabel;
      */
-//    NSString * iamgeUrl = [NSString stringWithFormat:@"%@%@",]
+//    NSString * iamgeUrl = [NSString stringWithFormat:@"%@%@",REQUEST_HOST,]
 //    self.headImageView sd_setImageWithURL:[NSURL URLWithString:] placeholderImage:<#(UIImage *)#>
     
     

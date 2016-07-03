@@ -34,6 +34,8 @@ typedef void(^BackUserIdentifyState)(NSString* identifyState);
  */
 + (BOOL)arrayIsEmpty:(NSArray *)array;
 
++ (NSString *)stringWithUrl:(NSString *)url Dic:(NSDictionary *)dict;
+
 /**
  *  判断该字典是否为空
  *

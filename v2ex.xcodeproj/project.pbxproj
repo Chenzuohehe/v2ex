@@ -216,9 +216,9 @@
 				04BEADAC1D264B260058BF56 /* NodeModel.m */,
 				04BEADA21D2615AC0058BF56 /* CommonUtil.h */,
 				04BEADA31D2615AC0058BF56 /* CommonUtil.m */,
-				04BEADB11D26590A0058BF56 /* Consts.h */,
 				0445CAE41D2B8CD80068513A /* CZFPSLabel.h */,
 				0445CAE51D2B8CD80068513A /* CZFPSLabel.m */,
+				04BEADB11D26590A0058BF56 /* Consts.h */,
 			);
 			path = Custom;
 			sourceTree = "<group>";

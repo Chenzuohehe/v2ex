@@ -1165,8 +1165,6 @@ static CommonUtil *defaultUtil = nil;
     // 4.获取了时间元素
     NSDateComponents *cmps = [calendar components:type fromDate:time toDate:nowDate options:0];
     
-    NSLog(@"%ld年%ld月%ld日%ld小时%ld分钟%ld秒钟", cmps.year, cmps.month, cmps.day, cmps.hour, cmps.minute, cmps.second);
-    
     if (cmps.year > 0) {
         if (cmps.day <= 0) {
             if (cmps.month <= 0) {

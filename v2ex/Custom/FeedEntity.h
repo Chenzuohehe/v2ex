@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MemberModel.h"
+#import "NodeModel.h"
 
 @interface FeedEntity : NSObject
 
@@ -15,17 +17,13 @@
 @property (copy , nonatomic  ) NSString     * identifier;
 @property (copy , nonatomic  ) NSString     * content;
 @property (copy , nonatomic  ) NSString     * content_rendered;
-@property (assign , nonatomic) NSNumber     * created;
-@property (assign , nonatomic) NSNumber     * postsId;
+@property (assign , nonatomic) NSString     * created;
+@property (assign , nonatomic) NSString     * replies;
+@property (copy , nonatomic  ) NSString     * title;
+@property (copy , nonatomic  ) NSString     * url;
+@property (assign , nonatomic) NSString     * last_modified;
+@property (assign , nonatomic) NSString     * last_touched;
 
 @property (copy , nonatomic  ) NSDictionary * member;
 @property (copy , nonatomic  ) NSDictionary * node;
-
-@property (assign , nonatomic) NSNumber     * replies;
-@property (copy , nonatomic  ) NSString     * title;
-@property (copy , nonatomic  ) NSString     * url;
-
-@property (assign , nonatomic) NSNumber     * last_modified;
-@property (assign , nonatomic) NSNumber     * last_touched;
-
 @end

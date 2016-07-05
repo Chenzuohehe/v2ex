@@ -30,17 +30,11 @@
     [self loadHotData];
     [self registerCell];
     self.mainTableView.separatorStyle = NO;
-    
+//    self.mainTableView
     
     self.title = @"V2EX";
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left"
-                                                                             style:UIBarButtonItemStylePlain
-                                                                            target:self
-                                                                            action:@selector(presentLeftMenuViewController:)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Right"
-                                                                              style:UIBarButtonItemStylePlain
-                                                                             target:self
-                                                                             action:@selector(presentRightMenuViewController:)];
+    self.navigationItem.leftBarButtonItem  = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Right" style:UIBarButtonItemStylePlain target:self action:@selector(presentRightMenuViewController:)];
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
     imageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -48,7 +42,10 @@
     imageView.image = [UIImage imageNamed:@"Balloon"];
     [self.view addSubview:imageView];
     
+    NSNumber * testNum = nil;
     
+    NSString * testStr = [NSString stringWithFormat:@"%lld",[testNum longLongValue]];
+    NSLog(@"123%@",testStr);
 }
 
 

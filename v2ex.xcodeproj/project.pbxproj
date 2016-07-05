@@ -13,6 +13,7 @@
 		0410FDD41D239D0A0080C4DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0410FDD21D239D0A0080C4DC /* LaunchScreen.storyboard */; };
 		0410FDDF1D239D0A0080C4DC /* v2exTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0410FDDE1D239D0A0080C4DC /* v2exTests.m */; };
 		0410FDEA1D239D0A0080C4DC /* v2exUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0410FDE91D239D0A0080C4DC /* v2exUITests.m */; };
+		0445CAE61D2B8CD80068513A /* CZFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445CAE51D2B8CD80068513A /* CZFPSLabel.m */; };
 		04BEADA11D260FEE0058BF56 /* FeedEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEADA01D260FEE0058BF56 /* FeedEntity.m */; };
 		04BEADA41D2615AC0058BF56 /* CommonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEADA31D2615AC0058BF56 /* CommonUtil.m */; };
 		04BEADAD1D264B260058BF56 /* NodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEADAC1D264B260058BF56 /* NodeModel.m */; };
@@ -60,6 +61,8 @@
 		0410FDE51D239D0A0080C4DC /* v2exUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = v2exUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0410FDE91D239D0A0080C4DC /* v2exUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = v2exUITests.m; sourceTree = "<group>"; };
 		0410FDEB1D239D0A0080C4DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0445CAE41D2B8CD80068513A /* CZFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZFPSLabel.h; sourceTree = "<group>"; };
+		0445CAE51D2B8CD80068513A /* CZFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZFPSLabel.m; sourceTree = "<group>"; };
 		04BEAD9F1D260FEE0058BF56 /* FeedEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedEntity.h; sourceTree = "<group>"; };
 		04BEADA01D260FEE0058BF56 /* FeedEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedEntity.m; sourceTree = "<group>"; };
 		04BEADA21D2615AC0058BF56 /* CommonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtil.h; sourceTree = "<group>"; };
@@ -214,6 +217,8 @@
 				04BEADA21D2615AC0058BF56 /* CommonUtil.h */,
 				04BEADA31D2615AC0058BF56 /* CommonUtil.m */,
 				04BEADB11D26590A0058BF56 /* Consts.h */,
+				0445CAE41D2B8CD80068513A /* CZFPSLabel.h */,
+				0445CAE51D2B8CD80068513A /* CZFPSLabel.m */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -448,6 +453,7 @@
 				4E138D941D255E1C00AE5FF3 /* BaseViewController.m in Sources */,
 				4E138D9D1D255E8E00AE5FF3 /* RightMenuViewController.m in Sources */,
 				0410FDC61D239D0A0080C4DC /* main.m in Sources */,
+				0445CAE61D2B8CD80068513A /* CZFPSLabel.m in Sources */,
 				04BEADB01D264B300058BF56 /* MemberModel.m in Sources */,
 				04BEADAD1D264B260058BF56 /* NodeModel.m in Sources */,
 			);
@@ -585,10 +591,12 @@
 			baseConfigurationReference = 2E103AE33E32582A228905EF /* Pods-v2ex.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = v2ex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chenzuo.v2ex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d1980c79-4b53-4de2-84aa-b7d39bc9a2e5";
 			};
 			name = Debug;
 		};
@@ -597,10 +605,12 @@
 			baseConfigurationReference = 2F782EDFABF2C5278796AC09 /* Pods-v2ex.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = v2ex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chenzuo.v2ex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d1980c79-4b53-4de2-84aa-b7d39bc9a2e5";
 			};
 			name = Release;
 		};

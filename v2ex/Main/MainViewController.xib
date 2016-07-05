@@ -24,13 +24,25 @@
                         <outlet property="delegate" destination="-1" id="bwS-xn-Agb"/>
                     </connections>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqC-j7-l6I" customClass="CZFPSLabel">
+                    <rect key="frame" x="41" y="540" width="62" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="4ax-qP-55A"/>
+                        <constraint firstAttribute="width" constant="62" id="m8g-w1-PkW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="oiu-w3-1vJ" secondAttribute="trailing" id="6wq-jf-SHe"/>
                 <constraint firstAttribute="bottom" secondItem="oiu-w3-1vJ" secondAttribute="bottom" id="UZg-Vs-CUS"/>
+                <constraint firstAttribute="bottom" secondItem="DqC-j7-l6I" secondAttribute="bottom" constant="39" id="dDp-tN-use"/>
                 <constraint firstItem="oiu-w3-1vJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iXu-RP-j5t"/>
                 <constraint firstItem="oiu-w3-1vJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uHH-eO-XJQ"/>
+                <constraint firstItem="DqC-j7-l6I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="41" id="yhi-xx-b5n"/>
             </constraints>
         </view>
     </objects>

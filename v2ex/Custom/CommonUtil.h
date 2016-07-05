@@ -319,11 +319,6 @@ typedef void(^BackUserIdentifyState)(NSString* identifyState);
 + (NSString *)notRounding:(NSString*)price afterPoint:(NSInteger)position;
 
 
-/**
- *  判断当前时间是否是10:00
- */
-+(void)judeNowDateIsequalToTeen;
-
 
 /**
  *  整理价格textField 配合(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string

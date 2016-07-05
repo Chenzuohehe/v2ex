@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "FeedEntity.h"
 #import "MainTableViewCell.h"
+#import "CZFPSLabel.h"
 
 #import <UITableView+FDTemplateLayoutCell.h>
 
@@ -70,6 +71,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+//    return 110;
     return [tableView fd_heightForCellWithIdentifier:@"Main" cacheByIndexPath:indexPath configuration:^(id cell) {
         
         NSDictionary * detailDic = self.dataArray[indexPath.row];

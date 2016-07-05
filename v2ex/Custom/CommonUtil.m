@@ -1210,4 +1210,70 @@ static CommonUtil *defaultUtil = nil;
     
 }
 
+/**
+ *  根据时间戳拼接时间字符串
+ *
+ *  @param timeNumber 时间戳
+ *
+ *  @return 时间字符串
+ */
++ (NSString *)dateStringTime:(NSNumber *)timeNumber{
+    
+//    NSDate = 
+    NSDate * time = [NSDate dateWithTimeIntervalSince1970:[timeNumber longLongValue]];
+    NSDate * nowDate =  [NSDate date];
+    
+    // 注意获取calendar,应该根据系统版本判断
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSCalendarUnit type = NSCalendarUnitYear |
+    NSCalendarUnitMonth |
+    NSCalendarUnitDay |
+    NSCalendarUnitHour |
+    NSCalendarUnitMinute |
+    NSCalendarUnitSecond;
+    
+    // 4.获取了时间元素
+    NSDateComponents *cmps = [calendar components:type fromDate:time toDate:nowDate options:0];
+    
+    NSLog(@"%ld年%ld月%ld日%ld小时%ld分钟%ld秒钟", cmps.year, cmps.month, cmps.day, cmps.hour, cmps.minute, cmps.second);
+    
+    if (cmps.year > 0) {
+        if (cmps.day <= 0) {
+            if (cmps.month <= 0) {
+                return [NSString stringWithFormat:@"%ld年",cmps.year];
+            }
+            return [NSString stringWithFormat:@"%ld年%ld月",cmps.year,cmps.month];
+            
+        }
+        return [NSString stringWithFormat:@"%ld年%ld月%ld天",cmps.year,cmps.month,cmps.day];
+    }
+    if (cmps.month > 0) {
+        if (cmps.day <= 0) {
+            return [NSString stringWithFormat:@"%ld月",cmps.month];
+        }
+        return [NSString stringWithFormat:@"%ld月%ld天",cmps.month,cmps.day];
+    }
+    if (cmps.day > 0) {
+        if (cmps.hour <= 0) {
+            return [NSString stringWithFormat:@"%ld天",cmps.day];
+        }
+        return [NSString stringWithFormat:@"%ld天%ld小时",cmps.day,cmps.hour];
+    }
+    if (cmps.hour > 0) {
+        if (cmps.minute <= 0) {
+            return [NSString stringWithFormat:@"%ld小时",cmps.hour];
+        }
+        return [NSString stringWithFormat:@"%ld小时%ld分钟",cmps.hour,cmps.minute];
+    }
+    if (cmps.minute > 0) {
+        if (cmps.second <= 0) {
+            return [NSString stringWithFormat:@"%ld分钟",cmps.hour];
+        }
+        return [NSString stringWithFormat:@"%ld分钟%ld秒",cmps.minute,cmps.second];
+    }
+    
+    return [NSString stringWithFormat:@"%ld秒钟",cmps.second];
+}
+
 @end

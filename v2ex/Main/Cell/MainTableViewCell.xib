@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="109.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lfD-d6-ese">
@@ -42,7 +42,7 @@
                         <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9 分钟前 · 最后回复陈佐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9z2-M7-cHZ">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9 分钟前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9z2-M7-cHZ">
                         <rect key="frame" x="73" y="34" width="233" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="ZsP-wG-dcb"/>
@@ -51,7 +51,7 @@
                         <color key="textColor" red="0.42352941179999998" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqk-C3-2NW">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqk-C3-2NW">
                         <rect key="frame" x="15" y="70" width="291" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -85,12 +85,16 @@
                     <constraint firstItem="6kE-Ov-eB9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="L96-qw-jS8"/>
                     <constraint firstItem="lfD-d6-ese" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="LmI-rZ-hAD"/>
                     <constraint firstItem="sie-3V-jVq" firstAttribute="leading" secondItem="6kE-Ov-eB9" secondAttribute="trailing" constant="8" id="Ng2-b5-3tL"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="nqk-C3-2NW" secondAttribute="trailing" constant="6" id="OvZ-79-mRd"/>
                     <constraint firstItem="ahN-PD-6g0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="bju-75-0l5"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Jum-Om-18Q" secondAttribute="trailing" constant="-8" id="e7R-kN-EVW"/>
                     <constraint firstItem="ahN-PD-6g0" firstAttribute="leading" secondItem="sie-3V-jVq" secondAttribute="trailing" id="hqu-5f-7Gx"/>
+                    <constraint firstItem="nqk-C3-2NW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="hsL-G8-lHy"/>
                     <constraint firstItem="sie-3V-jVq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="jrT-co-RMr"/>
+                    <constraint firstItem="nqk-C3-2NW" firstAttribute="top" secondItem="lfD-d6-ese" secondAttribute="bottom" constant="6" id="mja-XD-I3i"/>
                     <constraint firstItem="lfD-d6-ese" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="r2u-DB-Pyh"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Jum-Om-18Q" secondAttribute="bottom" constant="-8" id="rxE-ec-BZ3"/>
+                    <constraint firstItem="Jum-Om-18Q" firstAttribute="top" secondItem="nqk-C3-2NW" secondAttribute="bottom" constant="8" id="vpO-3k-ura"/>
                     <constraint firstItem="9z2-M7-cHZ" firstAttribute="leading" secondItem="lfD-d6-ese" secondAttribute="trailing" constant="8" id="yIV-i8-SoV"/>
                 </constraints>
             </tableViewCellContentView>
@@ -99,6 +103,7 @@
                 <outlet property="replyNumberButton" destination="ahN-PD-6g0" id="cNM-1x-UNI"/>
                 <outlet property="replyStatusLabel" destination="9z2-M7-cHZ" id="bxD-Sr-4Jt"/>
                 <outlet property="tagLabel" destination="sie-3V-jVq" id="F7f-c6-c2d"/>
+                <outlet property="tagLabelWidth" destination="ylA-Zd-DHC" id="baM-bJ-jiS"/>
                 <outlet property="titleLabel" destination="nqk-C3-2NW" id="NmM-Ab-8jZ"/>
                 <outlet property="userNameLabel" destination="6kE-Ov-eB9" id="jiP-ll-zcF"/>
             </connections>

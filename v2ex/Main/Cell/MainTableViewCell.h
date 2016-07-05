@@ -20,6 +20,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *replyStatusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tagLabelWidth;
+
+
 - (void)setFeedEntity:(FeedEntity *)detail;
 
 @end

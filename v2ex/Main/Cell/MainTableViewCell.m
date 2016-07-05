@@ -30,23 +30,17 @@
 
 - (void)setFeedEntity:(FeedEntity *)detail
 {
-    /**
-     *  @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
-     @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
-     @property (weak, nonatomic) IBOutlet UILabel *tagLabel;
-     @property (weak, nonatomic) IBOutlet UIButton *replyNumberButton;
-     @property (weak, nonatomic) IBOutlet UILabel *replyStatusLabel;
-     */
     
     if (![CommonUtil dictIsEmpty:detail.member]) {
-        NSString * iamgeUrl = [NSString stringWithFormat:@"%@%@",REQUEST_HOST,[CommonUtil isEmpty:detail.member[@"avatar_normal"]]?@"":detail.member[@"avatar_normal"]];
+        NSString * iamgeUrl = [NSString stringWithFormat:@"https:%@",[CommonUtil isEmpty:detail.member[@"avatar_normal"]]?@"":detail.member[@"avatar_normal"]];
         [self.headImageView sd_setImageWithURL:[NSURL URLWithString:iamgeUrl] placeholderImage:nil];
         self.userNameLabel.text = [CommonUtil isEmpty:detail.member[@"username"]]?@"":detail.member[@"username"];
     }
     
     if (![CommonUtil dictIsEmpty:detail.node]) {
-        self.tagLabel.text = [CommonUtil isEmpty:detail.node[@"title"]]?@"":detail.node[@"title"];
-        
+        NSString * tagString = [CommonUtil isEmpty:detail.node[@"title"]]?@"":detail.node[@"title"];
+        self.tagLabel.text = tagString;
+        self.tagLabelWidth.constant = [CommonUtil sizeWithString:tagString fontSize:13 sizewidth:0 sizeheight:20].width + 8;
     }
     
     self.titleLabel.text = [CommonUtil isEmpty:detail.title]?@"":detail.title;
@@ -55,6 +49,8 @@
     replyNumberStr = [CommonUtil isEmpty:replyNumberStr]?@"":replyNumberStr;
     [self.replyNumberButton setTitle:replyNumberStr forState:UIControlStateNormal];
     
+    NSString * lastTouchString = [CommonUtil dateStringTime:detail.last_touched];
+    self.replyStatusLabel.text = [NSString stringWithFormat:@"%@前",lastTouchString];
     
 }
 

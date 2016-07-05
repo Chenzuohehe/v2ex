@@ -26,6 +26,10 @@
     
     self.dataArray = [NSArray array];
     
+    [self loadHotData];
+    [self registerCell];
+    self.mainTableView.separatorStyle = NO;
+    
     
     self.title = @"V2EX";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left"
@@ -43,8 +47,7 @@
     imageView.image = [UIImage imageNamed:@"Balloon"];
     [self.view addSubview:imageView];
     
-    [self loadHotData];
-    [self registerCell];
+    
 }
 
 
@@ -67,12 +70,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    return 110;
-//    return [tableView fd_heightForCellWithIdentifier:@"identifer" cacheByIndexPath:indexPath configuration:^(id cell) {
-//        // 配置 cell 的数据源，和 "cellForRow" 干的事一致，比如：
-////        cell.entity = self.feedEntities[indexPath.row];
-//    }];
+    return [tableView fd_heightForCellWithIdentifier:@"Main" cacheByIndexPath:indexPath configuration:^(id cell) {
+        
+        NSDictionary * detailDic = self.dataArray[indexPath.row];
+        FeedEntity * detail = [[FeedEntity alloc]initWithDictionary:detailDic];
+        [cell setFeedEntity:detail];
+    }];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -87,28 +90,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    static NSString *cellIdentifier = @"Cell";
-//    
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-//    
-//    if (cell == nil) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-//        cell.backgroundColor = [UIColor clearColor];
-//        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
-//        cell.textLabel.textColor = [UIColor blackColor];
-//        cell.textLabel.highlightedTextColor = [UIColor lightGrayColor];
-//        cell.selectedBackgroundView = [[UIView alloc] init];
-//    }
-//    
-//    NSArray *titles = @[@"信息展示", @"信息展示", @"信息展示", @"信息展示", @"信息展示"];
-//    NSArray *images = @[@"IconHome", @"IconCalendar", @"IconProfile", @"IconSettings", @"IconEmpty"];
-//    cell.textLabel.text = titles[indexPath.row];
-//    cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
     
     MainTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"Main"];
     NSDictionary * detailDic = self.dataArray[indexPath.row];
     FeedEntity * detail = [[FeedEntity alloc]initWithDictionary:detailDic];
-    [cell setDetail:detail];
+    [cell setFeedEntity:detail];
     
     return cell;
 }

@@ -337,4 +337,14 @@ typedef void(^BackUserIdentifyState)(NSString* identifyState);
  */
 + (BOOL)sortOutNumber:(NSInteger)num TextField:(UITextField * )textField range:(NSRange)range string:(NSString *)string;
 
+/**
+ *  根据时间戳拼接时间字符串
+ *
+ *  @param timeNumber 时间戳
+ *
+ *  @return 时间字符串
+ */
++ (NSString *)dateStringTime:(NSNumber *)timeNumber;
+
+
 @end

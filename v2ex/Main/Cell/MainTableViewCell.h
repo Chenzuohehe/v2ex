@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *tagLabel;
 @property (weak, nonatomic) IBOutlet UIButton *replyNumberButton;
 @property (weak, nonatomic) IBOutlet UILabel *replyStatusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 - (void)setFeedEntity:(FeedEntity *)detail;
 

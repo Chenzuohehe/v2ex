@@ -15,12 +15,16 @@
 @interface MainViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 
+@property (copy, nonatomic) NSArray * dataArray;
+
 @end
 
 @implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.dataArray = [NSArray array];
     
     
     self.title = @"V2EX";
@@ -64,7 +68,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    return 44;
+    return 110;
 //    return [tableView fd_heightForCellWithIdentifier:@"identifer" cacheByIndexPath:indexPath configuration:^(id cell) {
 //        // 配置 cell 的数据源，和 "cellForRow" 干的事一致，比如：
 ////        cell.entity = self.feedEntities[indexPath.row];
@@ -78,7 +82,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex
 {
-    return 5;
+    return self.dataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -102,8 +106,9 @@
 //    cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
     
     MainTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"Main"];
-    
-    
+    NSDictionary * detailDic = self.dataArray[indexPath.row];
+    FeedEntity * detail = [[FeedEntity alloc]initWithDictionary:detailDic];
+    [cell setDetail:detail];
     
     return cell;
 }
@@ -117,9 +122,9 @@
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        
-        
-        NSLog(@"%@",responseObject);
+        self.dataArray = responseObject;
+        [self.mainTableView reloadData];
+//        NSLog(@"%@",responseObject);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         

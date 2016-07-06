@@ -77,7 +77,7 @@
     }
     
     NSArray *titles = @[@"个人中心", @"消息提醒", @"我的收藏", @"节点", @"更多"];
-    NSArray *images = @[@"IconHome", @"IconCalendar", @"IconProfile", @"IconSettings", @"IconEmpty"];
+    NSArray *images = @[@"userCenter", @"remind", @"collect", @"node", @"more"];
     cell.textLabel.text = titles[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
     

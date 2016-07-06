@@ -10,6 +10,7 @@
 #import "FeedEntity.h"
 #import "MainTableViewCell.h"
 #import "CZFPSLabel.h"
+#import "MJRefresh.h"
 
 #import <UITableView+FDTemplateLayoutCell.h>
 
@@ -27,7 +28,7 @@
     
     self.dataArray = [NSArray array];
     
-    [self loadHotData];
+//    [self loadHotData];
     [self registerCell];
     self.mainTableView.separatorStyle = NO;
     
@@ -47,6 +48,11 @@
     [rightBtn addTarget:self action:@selector(presentRightMenuViewController:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem * rightBar = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
     self.navigationItem.rightBarButtonItem = rightBar;
+    
+    
+    self.mainTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    
+    [self.mainTableView.mj_header beginRefreshing];
 }
 
 
@@ -110,6 +116,7 @@
         
         self.dataArray = responseObject;
         [self.mainTableView reloadData];
+        [self.mainTableView.mj_header endRefreshing];
 //        NSLog(@"%@",responseObject);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -121,5 +128,8 @@
     
 }
 
-
+- (void)loadNewData
+{
+    [self loadHotData];
+}
 @end

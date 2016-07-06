@@ -30,22 +30,23 @@
     [self loadHotData];
     [self registerCell];
     self.mainTableView.separatorStyle = NO;
-//    self.mainTableView
+    
     
     self.title = @"V2EX";
-    self.navigationItem.leftBarButtonItem  = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
+    UIButton * leftBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 44, 33)];
+    [leftBtn setImage:[UIImage imageNamed:@"leftBar"] forState:UIControlStateNormal];
+    leftBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -13, 0, 0);
+    [leftBtn addTarget:self action:@selector(presentLeftMenuViewController:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem * leftBar = [[UIBarButtonItem alloc]initWithCustomView:leftBtn];
+    self.navigationItem.leftBarButtonItem = leftBar;
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Right" style:UIBarButtonItemStylePlain target:self action:@selector(presentRightMenuViewController:)];
-    
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    imageView.contentMode = UIViewContentModeScaleAspectFill;
-    imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    imageView.image = [UIImage imageNamed:@"Balloon"];
-    [self.view addSubview:imageView];
-    
-    NSNumber * testNum = nil;
-    
-    NSString * testStr = [NSString stringWithFormat:@"%lld",[testNum longLongValue]];
-    NSLog(@"123%@",testStr);
+    UIButton * rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 44, 33)];
+    [rightBtn setImage:[UIImage imageNamed:@"rightBar"] forState:UIControlStateNormal];
+    rightBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 13, 0, 0);
+    [rightBtn addTarget:self action:@selector(presentRightMenuViewController:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem * rightBar = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
+    self.navigationItem.rightBarButtonItem = rightBar;
 }
 
 
@@ -119,4 +120,6 @@
     
     
 }
+
+
 @end

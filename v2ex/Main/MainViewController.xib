@@ -40,10 +40,11 @@
                 <constraint firstAttribute="trailing" secondItem="oiu-w3-1vJ" secondAttribute="trailing" id="6wq-jf-SHe"/>
                 <constraint firstAttribute="bottom" secondItem="oiu-w3-1vJ" secondAttribute="bottom" id="UZg-Vs-CUS"/>
                 <constraint firstAttribute="bottom" secondItem="DqC-j7-l6I" secondAttribute="bottom" constant="39" id="dDp-tN-use"/>
-                <constraint firstItem="oiu-w3-1vJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iXu-RP-j5t"/>
                 <constraint firstItem="oiu-w3-1vJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uHH-eO-XJQ"/>
+                <constraint firstItem="oiu-w3-1vJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ujs-gF-atI"/>
                 <constraint firstItem="DqC-j7-l6I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="41" id="yhi-xx-b5n"/>
             </constraints>
+            <point key="canvasLocation" x="152" y="425"/>
         </view>
     </objects>
 </document>

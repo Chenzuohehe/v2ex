@@ -339,7 +339,7 @@ typedef void(^BackUserIdentifyState)(NSString* identifyState);
  *
  *  @return 时间字符串
  */
-+ (NSString *)dateStringTime:(NSNumber *)timeNumber;
++ (NSString *)dateStringTime:(NSString *)timeNumber;
 
 
 @end

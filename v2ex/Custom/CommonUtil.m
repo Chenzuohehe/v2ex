@@ -1146,7 +1146,7 @@ static CommonUtil *defaultUtil = nil;
  *
  *  @return 时间字符串
  */
-+ (NSString *)dateStringTime:(NSNumber *)timeNumber{
++ (NSString *)dateStringTime:(NSString *)timeNumber{
     
 //    NSDate = 
     NSDate * time = [NSDate dateWithTimeIntervalSince1970:[timeNumber longLongValue]];

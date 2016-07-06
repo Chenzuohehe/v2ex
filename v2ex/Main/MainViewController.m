@@ -53,8 +53,21 @@
     self.mainTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     
     [self.mainTableView.mj_header beginRefreshing];
+    
+    UIPanGestureRecognizer * moveGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panMove:)];
+    [self.view addGestureRecognizer:moveGesture];
+    
 }
 
+- (void)panMove:(UIPanGestureRecognizer *)moveGesture
+{
+    CGPoint point = [moveGesture translationInView:self.view];
+    if (point.x > 0) {
+        NSLog(@">0");
+    }else if (point.x < 0){
+        NSLog(@"<0");
+    }
+}
 
 - (void)registerCell
 {

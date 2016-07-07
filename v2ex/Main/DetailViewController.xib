@@ -7,7 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController">
             <connections>
-                <outlet property="mainWebView" destination="Lcg-y1-HHy" id="HdS-FN-zDE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,20 +15,17 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lcg-y1-HHy">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q5u-a1-dtR">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="Rug-PE-U7H"/>
-                    </connections>
-                </webView>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Lcg-y1-HHy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SHg-IS-rG8"/>
-                <constraint firstAttribute="bottom" secondItem="Lcg-y1-HHy" secondAttribute="bottom" id="bMH-ii-VwZ"/>
-                <constraint firstAttribute="trailing" secondItem="Lcg-y1-HHy" secondAttribute="trailing" id="btW-Om-xFS"/>
-                <constraint firstItem="Lcg-y1-HHy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hG2-gc-JLm"/>
+                <constraint firstItem="q5u-a1-dtR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Dhe-xN-L86"/>
+                <constraint firstAttribute="trailing" secondItem="q5u-a1-dtR" secondAttribute="trailing" id="Ebp-vH-Tc6"/>
+                <constraint firstAttribute="bottom" secondItem="q5u-a1-dtR" secondAttribute="bottom" id="Lcp-hE-Hrk"/>
+                <constraint firstItem="q5u-a1-dtR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YyK-ku-pbO"/>
             </constraints>
         </view>
     </objects>

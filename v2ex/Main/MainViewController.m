@@ -140,11 +140,9 @@
         
         self.dataArray = responseObject;
         
-        NSLog(@"%@",self.dataArray);
-        
         [self.mainTableView reloadData];
         [self.mainTableView.mj_header endRefreshing];
-        NSLog(@"123123%@",responseObject);
+        
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         

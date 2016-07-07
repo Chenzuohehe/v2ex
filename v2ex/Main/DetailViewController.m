@@ -22,20 +22,23 @@
     
     
     self.mainWebView.scrollView.bounces = NO;
+    self.mainWebView.scalesPageToFit = YES;
     self.mainWebView.scrollView.showsVerticalScrollIndicator = FALSE;
     self.mainWebView.scrollView.showsHorizontalScrollIndicator = FALSE;
     
-//    NSString *filePath = [[NSBundle mainBundle]pathForResource:@"ceshi" ofType:@"html"];
-//    self.htmlString = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-//    NSString * string = self.htmlString;
-//    string = [string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//    
-//    self.htmlString = [self.htmlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//    self.htmlString = [self.htmlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-    self.htmlString = [self.htmlString stringByRemovingPercentEncoding];
-    NSLog(@"%@",self.htmlString);
-    [self.mainWebView loadHTMLString:self.htmlString baseURL:nil];
+    NSString * htmlStr = [NSString stringWithFormat:@"<html> \n"
+                          "<head> \n"
+                          "<style type=\"text/css\"> \n"
+                          "body { font-family: \"%@\";}\n"
+                          "</style> \n"
+                          "</head> \n"
+                          "<body>%@</body> \n"
+                          "</html>", @"Lucida Grande", self.htmlString];
+    
+    
+    [self.mainWebView loadHTMLString:htmlStr baseURL:nil];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -7,6 +7,8 @@
 //
 
 #import "MainViewController.h"
+#import "DetailViewController.h"
+
 #import "FeedEntity.h"
 #import "MainTableViewCell.h"
 #import "CZFPSLabel.h"
@@ -81,6 +83,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    
+    DetailViewController * detailController = [[DetailViewController alloc]initWithNibName:@"DetailViewController" bundle:nil];
+    
+    NSDictionary * detailDic = self.dataArray[indexPath.row];
+    FeedEntity * detail = [[FeedEntity alloc]initWithDictionary:detailDic];
+    detailController.htmlString = detail.content_rendered;
+    NSLog(@"detail.content_rendered%@",detail.content_rendered);
+    [self.navigationController pushViewController:detailController animated:YES];
 }
 
 #pragma mark -
@@ -121,6 +131,7 @@
 - (void)loadHotData
 {
     NSString * uri = @"https://www.v2ex.com/api/topics/hot.json";
+//    NSString * uri = @"http://www.v2ex.com/api/topics/show.json?id=289663";
     NSDictionary *param = [NSDictionary dictionary];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:uri parameters:param progress:^(NSProgress * _Nonnull downloadProgress) {
@@ -128,9 +139,12 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         self.dataArray = responseObject;
+        
+        NSLog(@"%@",self.dataArray);
+        
         [self.mainTableView reloadData];
         [self.mainTableView.mj_header endRefreshing];
-//        NSLog(@"%@",responseObject);
+        NSLog(@"123123%@",responseObject);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         

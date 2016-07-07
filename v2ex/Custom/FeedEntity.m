@@ -26,7 +26,7 @@
         _content          = [CommonUtil isEmpty:dictionary[@"content"]]?@"":dictionary[@"content"];
         _title            = [CommonUtil isEmpty:dictionary[@"title"]]?@"":dictionary[@"title"];
         _content          = [CommonUtil isEmpty:dictionary[@"content"]]?@"":dictionary[@"content"];
-        _content_rendered = [CommonUtil isEmpty:dictionary[@"content_rendered"]]?@"":dictionary[@"content"];
+        _content_rendered = [CommonUtil isEmpty:dictionary[@"content_rendered"]]?@"":dictionary[@"content_rendered"];
         _title            = [CommonUtil isEmpty:dictionary[@"title"]]?@"":dictionary[@"title"];
         _url              = [CommonUtil isEmpty:dictionary[@"url"]]?@"":dictionary[@"url"];
         

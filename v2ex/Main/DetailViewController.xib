@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController">
             <connections>
+                <outlet property="mainTableView" destination="q5u-a1-dtR" id="wVp-wC-oUk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,14 +19,30 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q5u-a1-dtR">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="QlL-kr-Oic"/>
+                        <outlet property="delegate" destination="-1" id="SaG-8d-dUW"/>
+                    </connections>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uqj-hc-cvs" customClass="CZFPSLabel">
+                    <rect key="frame" x="75" y="533" width="62" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="62" id="RS9-Kn-em0"/>
+                        <constraint firstAttribute="height" constant="21" id="Zu1-AN-jNm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="q5u-a1-dtR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Dhe-xN-L86"/>
                 <constraint firstAttribute="trailing" secondItem="q5u-a1-dtR" secondAttribute="trailing" id="Ebp-vH-Tc6"/>
                 <constraint firstAttribute="bottom" secondItem="q5u-a1-dtR" secondAttribute="bottom" id="Lcp-hE-Hrk"/>
+                <constraint firstItem="Uqj-hc-cvs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="75" id="Ry7-rg-aq3"/>
                 <constraint firstItem="q5u-a1-dtR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YyK-ku-pbO"/>
+                <constraint firstAttribute="bottom" secondItem="Uqj-hc-cvs" secondAttribute="bottom" constant="46" id="tLl-4W-nnA"/>
             </constraints>
         </view>
     </objects>

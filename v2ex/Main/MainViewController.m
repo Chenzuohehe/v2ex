@@ -89,7 +89,7 @@
     NSDictionary * detailDic = self.dataArray[indexPath.row];
     FeedEntity * detail = [[FeedEntity alloc]initWithDictionary:detailDic];
     detailController.htmlString = detail.content_rendered;
-    NSLog(@"detail.content_rendered%@",detail.content_rendered);
+    detailController.identifier = detail.identifier;
     [self.navigationController pushViewController:detailController animated:YES];
 }
 

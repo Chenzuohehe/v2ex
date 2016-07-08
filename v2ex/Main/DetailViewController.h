@@ -12,4 +12,5 @@
 
 
 @property (copy , nonatomic) NSString * htmlString;
+@property (copy , nonatomic) NSString * identifier;
 @end

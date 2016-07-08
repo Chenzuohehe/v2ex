@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040FC6181D2F8C50008AC7D3 /* RepliesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040FC6161D2F8C50008AC7D3 /* RepliesTableViewCell.m */; };
+		040FC6191D2F8C50008AC7D3 /* RepliesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040FC6171D2F8C50008AC7D3 /* RepliesTableViewCell.xib */; };
 		0410FDC61D239D0A0080C4DC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0410FDC51D239D0A0080C4DC /* main.m */; };
 		0410FDC91D239D0A0080C4DC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0410FDC81D239D0A0080C4DC /* AppDelegate.m */; };
 		0410FDD11D239D0A0080C4DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0410FDD01D239D0A0080C4DC /* Assets.xcassets */; };
@@ -50,6 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040FC6151D2F8C50008AC7D3 /* RepliesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepliesTableViewCell.h; sourceTree = "<group>"; };
+		040FC6161D2F8C50008AC7D3 /* RepliesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepliesTableViewCell.m; sourceTree = "<group>"; };
+		040FC6171D2F8C50008AC7D3 /* RepliesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepliesTableViewCell.xib; sourceTree = "<group>"; };
 		0410FDC11D239D0A0080C4DC /* v2ex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = v2ex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0410FDC51D239D0A0080C4DC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0410FDC71D239D0A0080C4DC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -207,6 +212,9 @@
 				4E138DA11D25611600AE5FF3 /* MainTableViewCell.h */,
 				4E138DA21D25611600AE5FF3 /* MainTableViewCell.m */,
 				4E138DA31D25611600AE5FF3 /* MainTableViewCell.xib */,
+				040FC6151D2F8C50008AC7D3 /* RepliesTableViewCell.h */,
+				040FC6161D2F8C50008AC7D3 /* RepliesTableViewCell.m */,
+				040FC6171D2F8C50008AC7D3 /* RepliesTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -374,6 +382,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040FC6191D2F8C50008AC7D3 /* RepliesTableViewCell.xib in Resources */,
 				4E138DA51D25611600AE5FF3 /* MainTableViewCell.xib in Resources */,
 				0410FDD41D239D0A0080C4DC /* LaunchScreen.storyboard in Resources */,
 				04D4D5F31D2DF1BC002DC19B /* DetailViewController.xib in Resources */,
@@ -453,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040FC6181D2F8C50008AC7D3 /* RepliesTableViewCell.m in Sources */,
 				04BEADA11D260FEE0058BF56 /* FeedEntity.m in Sources */,
 				0410FDC91D239D0A0080C4DC /* AppDelegate.m in Sources */,
 				4E138D8A1D255B3100AE5FF3 /* MainViewController.m in Sources */,

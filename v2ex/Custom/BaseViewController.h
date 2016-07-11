@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonUtil.h"
 #import "AFHTTPSessionManager.h"
 
 @interface BaseViewController : UIViewController

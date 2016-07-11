@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		040FC6181D2F8C50008AC7D3 /* RepliesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040FC6161D2F8C50008AC7D3 /* RepliesTableViewCell.m */; };
 		040FC6191D2F8C50008AC7D3 /* RepliesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040FC6171D2F8C50008AC7D3 /* RepliesTableViewCell.xib */; };
+		040FC6221D33AEAB008AC7D3 /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 040FC61F1D33AEAB008AC7D3 /* HTMLNode.m */; };
+		040FC6231D33AEAB008AC7D3 /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 040FC6211D33AEAB008AC7D3 /* HTMLParser.m */; };
+		040FC6251D33B912008AC7D3 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 040FC6241D33B912008AC7D3 /* libxml2.2.tbd */; };
 		0410FDC61D239D0A0080C4DC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0410FDC51D239D0A0080C4DC /* main.m */; };
 		0410FDC91D239D0A0080C4DC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0410FDC81D239D0A0080C4DC /* AppDelegate.m */; };
 		0410FDD11D239D0A0080C4DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0410FDD01D239D0A0080C4DC /* Assets.xcassets */; };
@@ -57,6 +60,11 @@
 		040FC6151D2F8C50008AC7D3 /* RepliesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepliesTableViewCell.h; sourceTree = "<group>"; };
 		040FC6161D2F8C50008AC7D3 /* RepliesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepliesTableViewCell.m; sourceTree = "<group>"; };
 		040FC6171D2F8C50008AC7D3 /* RepliesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepliesTableViewCell.xib; sourceTree = "<group>"; };
+		040FC61E1D33AEAB008AC7D3 /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
+		040FC61F1D33AEAB008AC7D3 /* HTMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLNode.m; sourceTree = "<group>"; };
+		040FC6201D33AEAB008AC7D3 /* HTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLParser.h; sourceTree = "<group>"; };
+		040FC6211D33AEAB008AC7D3 /* HTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLParser.m; sourceTree = "<group>"; };
+		040FC6241D33B912008AC7D3 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		0410FDC11D239D0A0080C4DC /* v2ex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = v2ex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0410FDC51D239D0A0080C4DC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0410FDC71D239D0A0080C4DC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040FC6251D33B912008AC7D3 /* libxml2.2.tbd in Frameworks */,
 				2E235570DEFDB772E022AC1E /* libPods-v2ex.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +141,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040FC61B1D33AD48008AC7D3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		040FC61C1D33AE9D008AC7D3 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				040FC61D1D33AEAB008AC7D3 /* HTMLParser */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		040FC61D1D33AEAB008AC7D3 /* HTMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				040FC61E1D33AEAB008AC7D3 /* HTMLNode.h */,
+				040FC61F1D33AEAB008AC7D3 /* HTMLNode.m */,
+				040FC6201D33AEAB008AC7D3 /* HTMLParser.h */,
+				040FC6211D33AEAB008AC7D3 /* HTMLParser.m */,
+			);
+			path = HTMLParser;
+			sourceTree = "<group>";
+		};
 		0410FDB81D239D0A0080C4DC = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +192,7 @@
 		0410FDC31D239D0A0080C4DC /* v2ex */ = {
 			isa = PBXGroup;
 			children = (
+				040FC61C1D33AE9D008AC7D3 /* Lib */,
 				4E138D8F1D255DED00AE5FF3 /* Custom */,
 				4E138D901D255DED00AE5FF3 /* Left */,
 				4E138D911D255DED00AE5FF3 /* Right */,
@@ -206,6 +242,7 @@
 				04D4D5EF1D2DF1BC002DC19B /* DetailViewController.h */,
 				04D4D5F01D2DF1BC002DC19B /* DetailViewController.m */,
 				04D4D5F11D2DF1BC002DC19B /* DetailViewController.xib */,
+				040FC61B1D33AD48008AC7D3 /* ViewModel */,
 				4E138D8E1D255D1000AE5FF3 /* Cell */,
 			);
 			path = Main;
@@ -279,6 +316,7 @@
 		BB8B41605DB96A2C6AB479F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				040FC6241D33B912008AC7D3 /* libxml2.2.tbd */,
 				B691E2FF96C807D19E869AF9 /* libPods-v2ex.a */,
 			);
 			name = Frameworks;
@@ -471,6 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040FC6221D33AEAB008AC7D3 /* HTMLNode.m in Sources */,
 				040FC6181D2F8C50008AC7D3 /* RepliesTableViewCell.m in Sources */,
 				04BEADA11D260FEE0058BF56 /* FeedEntity.m in Sources */,
 				0410FDC91D239D0A0080C4DC /* AppDelegate.m in Sources */,
@@ -484,6 +523,7 @@
 				0410FDC61D239D0A0080C4DC /* main.m in Sources */,
 				04D4D5F21D2DF1BC002DC19B /* DetailViewController.m in Sources */,
 				0445CAE61D2B8CD80068513A /* CZFPSLabel.m in Sources */,
+				040FC6231D33AEAB008AC7D3 /* HTMLParser.m in Sources */,
 				04BEADB01D264B300058BF56 /* MemberModel.m in Sources */,
 				04BEADAD1D264B260058BF56 /* NodeModel.m in Sources */,
 			);
@@ -622,6 +662,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/RESideMenu\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/UITableView+FDTemplateLayoutCell\"",
+					"\"${PODS_ROOT}/Headers/Public/YYKit\"",
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = v2ex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chenzuo.v2ex;
@@ -636,6 +687,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/RESideMenu\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/UITableView+FDTemplateLayoutCell\"",
+					"\"${PODS_ROOT}/Headers/Public/YYKit\"",
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = v2ex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chenzuo.v2ex;

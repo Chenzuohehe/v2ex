@@ -341,5 +341,5 @@ typedef void(^BackUserIdentifyState)(NSString* identifyState);
  */
 + (NSString *)dateStringTime:(NSString *)timeNumber;
 
-
++ (NSString *)stringFromHtmlString:(id)responseObject;
 @end

@@ -162,7 +162,7 @@
  */
 - (void)loadHtmlData
 {
-    NSString * uri = @"https://www.v2ex.com/?tab=play";
+    NSString * uri = @"https://www.v2ex.com/?tab=all";
     
     //获取html源码方法1 但是会占据主线程
     //    NSString *dataString = [NSString stringWithContentsOfURL:[NSURL URLWithString:uri] encoding:NSUTF8StringEncoding error:nil];  //htmlString是html网页的地址
@@ -178,9 +178,10 @@
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        NSString * dataString = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
-        NSLog(@"data:%@",dataString);
+//        NSString * dataString = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+//        NSLog(@"data:%@",dataString);
         
+        NSString * string = [CommonUtil stringFromHtmlString:responseObject];
         
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -192,6 +193,7 @@
 
 - (void)loadNewData
 {
-    [self loadHotData];
+//    [self loadHotData];
+    [self loadHtmlData];
 }
 @end

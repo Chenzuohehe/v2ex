@@ -13,6 +13,7 @@
 #include <sys/sysctl.h>
 #import "UIImageView+WebCache.h"
 #import "Consts.h"
+#import "HTMLParser.h"
 //#import "UserInfo.h"
 
 static CommonUtil *defaultUtil = nil;
@@ -1202,5 +1203,54 @@ static CommonUtil *defaultUtil = nil;
     
     return [NSString stringWithFormat:@"%ld秒钟",cmps.second];
 }
+
++ (NSString *)stringFromHtmlString:(id)responseObject{
+    
+    NSString * returnString;
+    
+//    NSMutableArray *topicArray = [[NSMutableArray alloc] init];
+    
+    @autoreleasepool {
+        
+        
+        NSString *htmlString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        
+        NSError *error = nil;
+        HTMLParser *parser = [[HTMLParser alloc] initWithString:htmlString error:&error];
+        
+        if (error) {
+            NSLog(@"Error: %@", error);
+            return nil;
+        }
+        
+        HTMLNode *bodyNode = [parser body];
+        NSArray *cellNodes = [bodyNode findChildTags:@"div"];
+        for (HTMLNode *cellNode in cellNodes) {
+            //<div class="cell item" style="">
+            if ([[cellNode getAttributeNamed:@"class"] isEqualToString:@"cell item"]) {
+                //<td width="10"></td>
+                NSArray *tdNodes = [cellNode findChildTags:@"td"];
+                
+                for (HTMLNode *tdNode in tdNodes) {
+                    
+                    NSString *content = tdNode.rawContents;
+                    
+                    //拥有class="avatar"
+                    if ([content rangeOfString:@"class=\"avatar\""].location != NSNotFound) {
+                        
+                        HTMLNode *userIdNode = [tdNode findChildTag:@"a"];
+                        
+                    }
+                    
+                }
+                
+            }
+        }
+    }
+        
+    
+    return returnString;
+}
+
 
 @end

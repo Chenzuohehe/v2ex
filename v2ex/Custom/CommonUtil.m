@@ -14,6 +14,7 @@
 #import "UIImageView+WebCache.h"
 #import "Consts.h"
 #import "HTMLParser.h"
+#import "FeedEntity.h"
 //#import "UserInfo.h"
 
 static CommonUtil *defaultUtil = nil;
@@ -1223,6 +1224,8 @@ static CommonUtil *defaultUtil = nil;
             return nil;
         }
         
+        FeedEntity * feedEntity = [[FeedEntity alloc]init];
+        
         HTMLNode *bodyNode = [parser body];
         NSArray *cellNodes = [bodyNode findChildTags:@"div"];
         for (HTMLNode *cellNode in cellNodes) {
@@ -1239,7 +1242,10 @@ static CommonUtil *defaultUtil = nil;
                     if ([content rangeOfString:@"class=\"avatar\""].location != NSNotFound) {
                         
                         HTMLNode *userIdNode = [tdNode findChildTag:@"a"];
-                        
+                        if (userIdNode) {
+                            NSString *idUrlString = [userIdNode getAttributeNamed:@"href"];
+//                            feedEntity. = [[idUrlString componentsSeparatedByString:@"/"] lastObject];
+                        }
                     }
                     
                 }

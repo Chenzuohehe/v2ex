@@ -30,13 +30,16 @@
 - (void)setFeedEntity:(FeedEntity *)detail
 {
     
-    if (![CommonUtil dictIsEmpty:detail.member]) {
-        NSString * iamgeUrl = [NSString stringWithFormat:@"https:%@",[CommonUtil isEmpty:detail.member[@"avatar_large"]]?@"":detail.member[@"avatar_large"]];
-        [self.headImageView sd_setImageWithURL:[NSURL URLWithString:iamgeUrl] placeholderImage:nil];
-        self.userNameLabel.text = [CommonUtil isEmpty:detail.member[@"username"]]?@"":detail.member[@"username"];
-    }
-//
-//    
+//    if (![CommonUtil dictIsEmpty:detail.member]) {
+//        NSString * iamgeUrl = [NSString stringWithFormat:@"https:%@",[CommonUtil isEmpty:detail.member[@"avatar_large"]]?@"":detail.member[@"avatar_large"]];
+//        [self.headImageView sd_setImageWithURL:[NSURL URLWithString:iamgeUrl] placeholderImage:nil];
+//        self.userNameLabel.text = [CommonUtil isEmpty:detail.member[@"username"]]?@"":detail.member[@"username"];
+//    }
+
+    NSString * iamgeUrl = [NSString stringWithFormat:@"https:%@",[CommonUtil isEmpty:detail.member.avatar_large]?@"":detail.member.avatar_large];
+    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:iamgeUrl] placeholderImage:nil];
+    self.userNameLabel.text = [CommonUtil isEmpty:detail.member.username]?@"":detail.member.username;
+    
     self.titleLabel.text = [CommonUtil isEmpty:detail.title]?@"":detail.title;
 //
     NSString * lastTouchString = [CommonUtil dateStringTime:detail.last_touched];

@@ -31,10 +31,10 @@
         _url              = [CommonUtil isEmpty:dictionary[@"url"]]?@"":dictionary[@"url"];
         
         if (![CommonUtil dictIsEmpty:dictionary[@"member"]]) {
-            self.member = dictionary[@"member"];
+            self.member = [[MemberModel alloc]initWithDictionary:dictionary[@"member"]];;
         }
         if (![CommonUtil dictIsEmpty:dictionary[@"node"]]) {
-            self.node = dictionary[@"node"];
+            self.node = [[NodeModel alloc]initWithDictionary:dictionary[@"node"]];;
         }
         
     }

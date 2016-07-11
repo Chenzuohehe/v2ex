@@ -25,8 +25,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
             endingLineNumber = "47"
-            landmarkName = "-webViewDidFinishLoad:"
-            landmarkType = "5">
+            landmarkName = "@implementation DetailViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

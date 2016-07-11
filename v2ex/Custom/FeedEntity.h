@@ -24,6 +24,6 @@
 @property (assign , nonatomic) NSString     * last_modified;
 @property (assign , nonatomic) NSString     * last_touched;
 
-@property (copy , nonatomic  ) NSDictionary * member;
-@property (copy , nonatomic  ) NSDictionary * node;
+@property (strong , nonatomic  ) MemberModel * member;
+@property (strong , nonatomic  ) NodeModel * node;
 @end

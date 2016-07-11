@@ -31,17 +31,14 @@
 - (void)setFeedEntity:(FeedEntity *)detail
 {
     
-    if (![CommonUtil dictIsEmpty:detail.member]) {
-        NSString * iamgeUrl = [NSString stringWithFormat:@"https:%@",[CommonUtil isEmpty:detail.member[@"avatar_large"]]?@"":detail.member[@"avatar_large"]];
-        [self.headImageView sd_setImageWithURL:[NSURL URLWithString:iamgeUrl] placeholderImage:nil];
-        self.userNameLabel.text = [CommonUtil isEmpty:detail.member[@"username"]]?@"":detail.member[@"username"];
-    }
+    NSString * iamgeUrl = [NSString stringWithFormat:@"https:%@",[CommonUtil isEmpty:detail.member.avatar_large]?@"":detail.member.avatar_large];
+    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:iamgeUrl] placeholderImage:nil];
+    self.userNameLabel.text = [CommonUtil isEmpty:detail.member.username]?@"":detail.member.username;
     
-    if (![CommonUtil dictIsEmpty:detail.node]) {
-        NSString * tagString = [CommonUtil isEmpty:detail.node[@"title"]]?@"":detail.node[@"title"];
-        self.tagLabel.text = tagString;
-        self.tagLabelWidth.constant = [CommonUtil sizeWithString:tagString fontSize:13 sizewidth:0 sizeheight:20].width + 8;
-    }
+    NSString * tagString = [CommonUtil isEmpty:detail.node.title]?@"":detail.node.title;
+    self.tagLabel.text = tagString;
+    self.tagLabelWidth.constant = [CommonUtil sizeWithString:tagString fontSize:13 sizewidth:0 sizeheight:20].width + 8;
+    
     
     self.titleLabel.text = [CommonUtil isEmpty:detail.title]?@"":detail.title;
     

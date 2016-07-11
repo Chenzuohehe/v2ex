@@ -13,8 +13,8 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
-    self = super.init;
-    if (self) {
+    
+    if ([super init]) {
         
         _avatar_large  = [CommonUtil isEmpty:dictionary[@"avatar_large"]]?@"":dictionary[@"avatar_large"];
         _avatar_mini   = [CommonUtil isEmpty:dictionary[@"avatar_mini"]]?@"":dictionary[@"avatar_mini"];

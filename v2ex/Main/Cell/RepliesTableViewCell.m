@@ -17,11 +17,6 @@
     [super awakeFromNib];
     // Initialization code
     
-    self.repliesWebView.scrollView.bounces = NO;
-    self.repliesWebView.scalesPageToFit = YES;
-    self.repliesWebView.scrollView.showsVerticalScrollIndicator = FALSE;
-    self.repliesWebView.scrollView.showsHorizontalScrollIndicator = FALSE;
-    
     
     
 }
@@ -42,23 +37,21 @@
     }
     NSString * lastTouchString = [CommonUtil dateStringTime:detail.last_touched];
     self.repliesTimeLabel.text = [NSString stringWithFormat:@"%@前",lastTouchString];
+
     
-    NSString * htmlStr = [NSString stringWithFormat:@"<html> \n"
-                          "<head> \n"
-                          "<style type=\"text/css\"> \n"
-                          "body { font-family: \"%@\";}\n"
-                          "</style> \n"
-                          "</head> \n"
-                          "<body>%@</body> \n"
-                          "</html>", @"Lucida Grande", detail.content_rendered];
+//    NSString * htmlStr = [NSString stringWithFormat:@"<html> \n"
+//                          "<head> \n"
+//                          "<style type=\"text/css\"> \n"
+//                          "body { font-family: \"%@\";}\n"
+//                          "</style> \n"
+//                          "</head> \n"
+//                          "<body>%@</body> \n"
+//                          "</html>", @"Lucida Grande", detail.content_rendered];
+//    self.contentLabel.text = htmlStr;
     
-    
-    [self.repliesWebView loadHTMLString:htmlStr baseURL:nil];
+    self.contentLabel.text = detail.content;
+//    [self.repliesWebView loadHTMLString:htmlStr baseURL:nil];
 }
-//- (void)webViewDidFinishLoad:(UIWebView *)webView
-//{
-//    NSInteger height = [[webView stringByEvaluatingJavaScriptFromString:@"document.body.scrollHeight"] integerValue];
-//    self.repliesWebView.frame=CGRectMake(0, 61, _screenWidth,height);
-//}
+
 
 @end

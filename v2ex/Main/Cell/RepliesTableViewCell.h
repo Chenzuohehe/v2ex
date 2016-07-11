@@ -14,8 +14,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *repliesTimeLabel;
-@property (weak, nonatomic) IBOutlet UIWebView *repliesWebView;
 
+
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 
 - (void)setFeedEntity:(FeedEntity *)detail;
 @end

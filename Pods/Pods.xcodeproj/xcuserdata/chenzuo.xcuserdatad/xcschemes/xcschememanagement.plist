@@ -34,9 +34,19 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>YYKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>139DDE5F6957A0C6116E5834DDA80E0F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1FEE692BE58ABF956482BF000249CCE8</key>
 		<dict>
 			<key>primary</key>
@@ -67,12 +77,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7EB296A277E8A60E12C4D46F7032947C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>80E4EB1D8CE0772A4D5DFD78F893CAA5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>928353533005A4198EBDA5B700D37B64</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>AD98B50B48C6D8B4E2450C385C50EEEC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B49CA582CCD074ABE849F9E863E50738</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BF5793752ED379163FD11327B7388081</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -90,6 +90,8 @@
     FeedEntity * detail = [[FeedEntity alloc]initWithDictionary:detailDic];
     detailController.htmlString = detail.content_rendered;
     detailController.identifier = detail.identifier;
+//    detailController.detail = detail;
+    detailController.detailDic = detailDic;
     [self.navigationController pushViewController:detailController animated:YES];
 }
 

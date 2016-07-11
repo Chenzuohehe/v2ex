@@ -15,8 +15,8 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
-    self = super.init;
-    if (self) {
+//    self = [super init];
+    if (self = [super init]) {
         _identifier       = [NSString stringWithFormat:@"%lld",[dictionary[@"id"] longLongValue]];
         _created          = [NSString stringWithFormat:@"%lld",[dictionary[@"created"] longLongValue]];
         _last_modified    = [NSString stringWithFormat:@"%lld",[dictionary[@"last_modified"] longLongValue]];

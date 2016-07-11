@@ -8,11 +8,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="178" id="KGk-i7-Jjw" customClass="ContentTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="170"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="KGk-i7-Jjw" customClass="ContentTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="112"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="600" height="169.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="600" height="111"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGy-c2-gEl">
@@ -71,35 +71,39 @@
                         <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uhj-9J-ggJ">
-                        <rect key="frame" x="0.0" y="70" width="600" height="100"/>
-                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="100" id="xLP-dM-nLF"/>
-                        </constraints>
-                    </webView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDB-Ef-n8U">
+                        <rect key="frame" x="8" y="73" width="584" height="37"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Uhj-9J-ggJ" firstAttribute="top" secondItem="Y5w-ue-VHv" secondAttribute="bottom" id="9gT-Nh-rhh"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="IDB-Ef-n8U" secondAttribute="bottom" constant="-7" id="ADc-q3-MCI"/>
                     <constraint firstItem="Y5w-ue-VHv" firstAttribute="top" secondItem="lyu-V5-ryi" secondAttribute="bottom" id="I7z-J5-TNi"/>
                     <constraint firstAttribute="trailingMargin" secondItem="UGy-c2-gEl" secondAttribute="trailing" constant="-8" id="Im9-H0-9s0"/>
+                    <constraint firstItem="IDB-Ef-n8U" firstAttribute="top" secondItem="Y5w-ue-VHv" secondAttribute="bottom" constant="3" id="Lch-9M-bZb"/>
+                    <constraint firstItem="IDB-Ef-n8U" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="OUo-GQ-cMD"/>
                     <constraint firstItem="Y5w-ue-VHv" firstAttribute="top" secondItem="lyu-V5-ryi" secondAttribute="bottom" id="Skv-nb-KhY"/>
                     <constraint firstItem="lyu-V5-ryi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="TP4-hI-jWk"/>
                     <constraint firstItem="UGy-c2-gEl" firstAttribute="leading" secondItem="Y5w-ue-VHv" secondAttribute="trailing" id="VQ5-V5-dj4"/>
                     <constraint firstItem="UGy-c2-gEl" firstAttribute="top" secondItem="lyu-V5-ryi" secondAttribute="bottom" id="Zdo-4m-u8F"/>
                     <constraint firstItem="lyu-V5-ryi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="g3X-6c-GRM"/>
                     <constraint firstItem="UGy-c2-gEl" firstAttribute="width" secondItem="Y5w-ue-VHv" secondAttribute="width" id="hNM-T5-FAW"/>
-                    <constraint firstItem="Uhj-9J-ggJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="ixe-qe-QDY"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Uhj-9J-ggJ" secondAttribute="trailing" constant="-8" id="pkP-oa-2rQ"/>
+                    <constraint firstItem="IDB-Ef-n8U" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="id3-wP-Y1Y"/>
                     <constraint firstAttribute="trailingMargin" secondItem="lyu-V5-ryi" secondAttribute="trailing" constant="-8" id="rzp-dg-EM2"/>
                     <constraint firstItem="UGy-c2-gEl" firstAttribute="top" secondItem="lyu-V5-ryi" secondAttribute="bottom" id="uF7-FG-eNN"/>
                     <constraint firstItem="Y5w-ue-VHv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="zP5-Ki-9cb"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="mainWebView" destination="Uhj-9J-ggJ" id="x8D-qs-sMi"/>
+                <outlet property="contentLabel" destination="IDB-Ef-n8U" id="23m-U9-xj3"/>
+                <outlet property="headImageView" destination="ExB-Gc-a6O" id="w42-sv-yFH"/>
+                <outlet property="repliceTimeLabel" destination="Lgv-eq-Byu" id="VSE-7v-tGQ"/>
+                <outlet property="titleLabel" destination="lyu-V5-ryi" id="Bad-8t-o2v"/>
+                <outlet property="userNameLabel" destination="0cR-86-1yp" id="q8s-6h-mar"/>
             </connections>
-            <point key="canvasLocation" x="196" y="249"/>
+            <point key="canvasLocation" x="196" y="220"/>
         </tableViewCell>
     </objects>
 </document>

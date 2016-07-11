@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "FeedEntity.h"
 @interface ContentTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIWebView *mainWebView;
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *headImageView;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *repliceTimeLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+
+- (void)setFeedEntity:(FeedEntity *)detail;
 
 @end

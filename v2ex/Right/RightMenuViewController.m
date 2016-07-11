@@ -34,7 +34,45 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    NSArray *titles = @[@"技术", @"创意",@"好玩",@"Apple",@"酷工作",@"交易",@"城市",@"问与答",@"最热",@"全部",@"R2"];
+    switch (indexPath.row) {
+        case 0:
+            NSLog(@"技术");
+            break;
+        case 1:
+            NSLog(@"创意");
+            break;
+        case 2:
+            NSLog(@"好玩");
+            break;
+        case 3:
+            NSLog(@"Apple");
+            break;
+        case 4:
+            NSLog(@"酷工作");
+            break;
+        case 5:
+            NSLog(@"交易");
+            break;
+        case 6:
+            NSLog(@"城市");
+            break;
+        case 7:
+            NSLog(@"问与答");
+            break;
+        case 8:
+            NSLog(@"最热");
+            break;
+        case 9:
+            NSLog(@"全部");
+            break;
+        case 10:
+            NSLog(@"R2");
+            break;
+        
+        default:
+            break;
+    }
 }
 
 #pragma mark -

@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "v2ex/Main/MainViewController.m"
-            timestampString = "489900215.85148"
+            timestampString = "489919538.509992"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169">
+            startingLineNumber = "185"
+            endingLineNumber = "185">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -56,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "v2ex/Main/Cell/ContentTableViewCell.m"
-            timestampString = "489899266.409363"
+            timestampString = "489901389.202664"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "-setFeedEntity:"
             landmarkType = "5">
          </BreakpointContent>
@@ -88,12 +88,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "v2ex/Main/DetailViewController.m"
-            timestampString = "489900394.069237"
+            timestampString = "489901333.513904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "v2ex/Main/MainViewController.m"
+            timestampString = "489910703.390622"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "-loadHotData"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "v2ex/Main/MainViewController.m"
+            timestampString = "489919538.509992"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "-loadHotData"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

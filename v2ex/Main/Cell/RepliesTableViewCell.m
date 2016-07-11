@@ -16,7 +16,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     
     
 }
@@ -37,20 +37,9 @@
     }
     NSString * lastTouchString = [CommonUtil dateStringTime:detail.last_touched];
     self.repliesTimeLabel.text = [NSString stringWithFormat:@"%@前",lastTouchString];
-
-    
-//    NSString * htmlStr = [NSString stringWithFormat:@"<html> \n"
-//                          "<head> \n"
-//                          "<style type=\"text/css\"> \n"
-//                          "body { font-family: \"%@\";}\n"
-//                          "</style> \n"
-//                          "</head> \n"
-//                          "<body>%@</body> \n"
-//                          "</html>", @"Lucida Grande", detail.content_rendered];
-//    self.contentLabel.text = htmlStr;
     
     self.contentLabel.text = detail.content;
-//    [self.repliesWebView loadHTMLString:htmlStr baseURL:nil];
+    
 }
 
 

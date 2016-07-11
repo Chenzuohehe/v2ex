@@ -34,6 +34,7 @@
     [self loadRepliesData];
     [self registerCell];
 //    [self addHeadView];
+    self.mainTableView.separatorStyle = NO;
     
 }
 

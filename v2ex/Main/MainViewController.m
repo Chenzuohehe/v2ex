@@ -132,10 +132,12 @@
 
 - (void)loadHotData
 {
+    
     NSString * uri = @"https://www.v2ex.com/api/topics/hot.json";
 //    NSString * uri = @"http://www.v2ex.com/api/topics/show.json?id=289663";
     NSDictionary *param = [NSDictionary dictionary];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
     [manager GET:uri parameters:param progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -154,6 +156,39 @@
     
     
 }
+
+/**
+ *  获取html源码
+ */
+- (void)loadHtmlData
+{
+    NSString * uri = @"https://www.v2ex.com/?tab=play";
+    
+    //获取html源码方法1 但是会占据主线程
+    //    NSString *dataString = [NSString stringWithContentsOfURL:[NSURL URLWithString:uri] encoding:NSUTF8StringEncoding error:nil];  //htmlString是html网页的地址
+    
+    NSDictionary *param = [NSDictionary dictionary];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes =  [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/plain", @"image/png",nil];
+    
+    //设置返回格式 改成二进制格式
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    [manager GET:uri parameters:param progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSString * dataString = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSLog(@"data:%@",dataString);
+        
+        
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+    
+}
+
 
 - (void)loadNewData
 {

@@ -40,6 +40,25 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    switch (indexPath.row) {
+        case 0:
+            NSLog(@"userCenter");
+            break;
+        case 1:
+            NSLog(@"magCenter");
+            break;
+        case 2:
+            NSLog(@"我的收藏");
+            break;
+        case 3:
+            NSLog(@"节点https://www.v2ex.com/api/nodes/all.json");
+            break;
+        case 4:
+            NSLog(@"more");
+            break;
+        default:
+            break;
+    }
     
 }
 
@@ -80,7 +99,7 @@
     NSArray *images = @[@"userCenter", @"remind", @"collect", @"node", @"more"];
     cell.textLabel.text = titles[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 

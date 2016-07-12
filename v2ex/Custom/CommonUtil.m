@@ -1225,6 +1225,8 @@ static CommonUtil *defaultUtil = nil;
         }
         
         FeedEntity * feedEntity = [[FeedEntity alloc]init];
+        feedEntity.member = [[MemberModel alloc]init];
+        feedEntity.node = [[NodeModel alloc]init];
         
         HTMLNode *bodyNode = [parser body];
         NSArray *cellNodes = [bodyNode findChildTags:@"div"];
@@ -1243,11 +1245,63 @@ static CommonUtil *defaultUtil = nil;
                         
                         HTMLNode *userIdNode = [tdNode findChildTag:@"a"];
                         if (userIdNode) {
+                            //名称
                             NSString *idUrlString = [userIdNode getAttributeNamed:@"href"];
-//                            feedEntity. = [[idUrlString componentsSeparatedByString:@"/"] lastObject];
+                            feedEntity.node.name = [[idUrlString componentsSeparatedByString:@"/"] lastObject];
+                            
                         }
+                        HTMLNode *avatarNode = [tdNode findChildTag:@"img"];
+                        if (avatarNode) {
+                            NSString *avatarString = [avatarNode getAttributeNamed:@"src"];
+//                            if ([avatarString hasPrefix:@"//"]) {
+//                                avatarString = [@"https:" stringByAppendingString:avatarString];
+//                            }
+                            //替换成头像大图
+                            if ([avatarString rangeOfString:@"normal.png"].location != NSNotFound) {
+                                avatarString = [avatarString stringByReplacingOccurrencesOfString:@"normal.png" withString:@"large.png"];
+                            }
+                            feedEntity.member.avatar_large = avatarString;
+                        }
+                        
                     }
-                    
+                    //title
+                    if ([content rangeOfString:@"class=\"item_title\""].location != NSNotFound) {
+                        
+                        NSArray * spanArrays = [tdNode findChildTags:@"span"];
+                        for (HTMLNode * titleNode in spanArrays) {
+                            NSString * titleString = titleNode.rawContents;
+                            if ([titleString rangeOfString:@"class=\"item_title\""].location != NSNotFound) {
+                                //标题
+                                HTMLNode *tNode = [titleNode findChildTag:@"a"];
+                                feedEntity.title = tNode.allContents;
+                                
+                            }
+                            if ([titleString rangeOfString:@"class=\"node\""].location != NSNotFound) {
+                                //tag
+                                HTMLNode *tNode = [titleNode findChildTag:@"a"];
+                                feedEntity.node.title = tNode.allContents;
+                                
+                            }
+                            if ([titleNode.rawContents rangeOfString:@"最后回复"].location != NSNotFound || [titleNode.rawContents rangeOfString:@"前"].location != NSNotFound){
+                                
+                                NSLog(@"titleNode.rawContents:%@",titleNode.allContents);
+                                
+                            }
+                            
+                            
+                        }
+                        
+                    }
+                    if ([content rangeOfString:@"class=\"count_livid\""].location != NSNotFound) {
+                        
+                        HTMLNode *replyNode = [tdNode findChildTag:@"a"];
+                        feedEntity.replies = replyNode.allContents;
+                        NSString *replyString = [replyNode getAttributeNamed:@"href"];
+                        feedEntity.identifier = [[[[replyString componentsSeparatedByString:@"#"] firstObject] componentsSeparatedByString:@"t/"] lastObject];
+                        
+                        
+                        
+                    }
                 }
                 
             }

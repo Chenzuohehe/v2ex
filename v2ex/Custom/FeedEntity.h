@@ -23,6 +23,7 @@
 @property (copy , nonatomic  ) NSString     * url;
 @property (assign , nonatomic) NSString     * last_modified;
 @property (assign , nonatomic) NSString     * last_touched;
+@property (copy , nonatomic  ) NSString     * lastReply;
 
 @property (strong , nonatomic  ) MemberModel * member;
 @property (strong , nonatomic  ) NodeModel * node;

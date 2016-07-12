@@ -193,7 +193,7 @@
 
 - (void)loadNewData
 {
-    [self loadHotData];
-//    [self loadHtmlData];
+//    [self loadHotData];
+    [self loadHtmlData];
 }
 @end

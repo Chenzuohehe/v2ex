@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface LeftMenuViewController : BaseViewController
+@interface LeftMenuViewController : UIViewController
 
 @end

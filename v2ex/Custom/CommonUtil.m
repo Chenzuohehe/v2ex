@@ -1274,7 +1274,7 @@ static CommonUtil *defaultUtil = nil;
                                 //标题
                                 HTMLNode *tNode = [titleNode findChildTag:@"a"];
                                 feedEntity.title = tNode.allContents;
-                                
+                                NSLog(@"title:%@",feedEntity.title);
                             }
                             if ([titleString rangeOfString:@"class=\"node\""].location != NSNotFound) {
                                 //tag
@@ -1282,14 +1282,16 @@ static CommonUtil *defaultUtil = nil;
                                 feedEntity.node.title = tNode.allContents;
                                 
                             }
-                            if ([titleNode.rawContents rangeOfString:@"最后回复"].location != NSNotFound || [titleNode.rawContents rangeOfString:@"前"].location != NSNotFound){
-                                //多分钟前最后回复来自
-//                                NSLog(@"titleNode.rawContents:%@",titleNode.allContents);
-                                feedEntity.last_touched = [[titleNode.allContents componentsSeparatedByString:@"  •  最后"]firstObject];
+                            feedEntity.last_touched = nil;
+                            if ([titleString rangeOfString:@"class=\"small fade\""].location !=NSNotFound) {
                                 
-                                NSLog(@"last_touched%@",feedEntity.last_touched);
+                                if ([titleString rangeOfString:@"最后回复"].location != NSNotFound || [titleString rangeOfString:@"前"].location != NSNotFound){
+                                    
+                                    NSLog(@"titleNode.rawContents:%@",titleNode.allContents);
+                                    feedEntity.last_touched = [NSString stringWithFormat:@"%@",titleNode.allContents];
+                                }
+                                
                             }
-                            
                             
                         }
                         

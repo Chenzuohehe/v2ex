@@ -7,6 +7,7 @@
 //
 
 #import "RightMenuViewController.h"
+#import "MainViewController.h"
 
 @interface RightMenuViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
@@ -34,45 +35,65 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray *titles = @[@"技术", @"创意",@"好玩",@"Apple",@"酷工作",@"交易",@"城市",@"问与答",@"最热",@"全部",@"R2"];
+    NSString * topic;
+    topic = @"tab=all";
     switch (indexPath.row) {
         case 0:
             NSLog(@"技术");
+            topic = @"tab=tech";
             break;
         case 1:
             NSLog(@"创意");
+            topic = @"tab=creative";
             break;
         case 2:
             NSLog(@"好玩");
+            topic = @"tab=play";
             break;
         case 3:
             NSLog(@"Apple");
+            topic = @"tab=apple";
             break;
         case 4:
             NSLog(@"酷工作");
+            topic = @"tab=jobs";
             break;
         case 5:
             NSLog(@"交易");
+            topic = @"tab=deals";
             break;
         case 6:
             NSLog(@"城市");
+            topic = @"tab=city";
             break;
         case 7:
             NSLog(@"问与答");
+            topic = @"tab=qna";
             break;
         case 8:
             NSLog(@"最热");
+            topic = @"tab=hot";
             break;
         case 9:
             NSLog(@"全部");
+            topic = @"tab=all";
             break;
         case 10:
             NSLog(@"R2");
+            topic = @"tab=r2";
             break;
         
         default:
             break;
     }
+    
+    MainViewController * nextViewController = [[MainViewController alloc] init];
+    nextViewController.topic = topic;
+    [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:nextViewController]
+                                                 animated:YES];
+    [self.sideMenuViewController hideMenuViewController];
+
+    
 }
 
 #pragma mark -

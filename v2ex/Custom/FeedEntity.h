@@ -22,7 +22,7 @@
 @property (copy , nonatomic  ) NSString     * title;
 @property (copy , nonatomic  ) NSString     * url;
 @property (assign , nonatomic) NSString     * last_modified;
-@property (assign , nonatomic) NSString     * last_touched;
+@property (copy , nonatomic) NSString     * last_touched;
 @property (copy , nonatomic  ) NSString     * lastReply;
 
 @property (strong , nonatomic  ) MemberModel * member;

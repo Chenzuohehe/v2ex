@@ -7,7 +7,8 @@
 //
 
 #import "BaseViewController.h"
+#import "RESideMenu.h"
 
-@interface RightMenuViewController : BaseViewController
+@interface RightMenuViewController : UIViewController
 
 @end

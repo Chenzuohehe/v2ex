@@ -99,12 +99,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    return 110;
     return [tableView fd_heightForCellWithIdentifier:@"Main" cacheByIndexPath:indexPath configuration:^(id cell) {
-        
-//        NSDictionary * detailDic = self.dataArray[indexPath.row];
-//        FeedEntity * detail = [[FeedEntity alloc]initWithDictionary:detailDic];
-        
         
         FeedEntity * detail = self.dataArray[indexPath.row];
         [cell setFeedEntity:detail];

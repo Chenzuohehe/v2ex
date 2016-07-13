@@ -108,9 +108,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1328"
-            endingLineNumber = "1328"
-            landmarkName = "+feedEntityListFromHtmlString:"
-            landmarkType = "5">
+            endingLineNumber = "1328">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

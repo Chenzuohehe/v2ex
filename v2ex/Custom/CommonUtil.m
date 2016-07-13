@@ -1221,8 +1221,6 @@ static CommonUtil *defaultUtil = nil;
             return nil;
         }
         
-        
-        
         HTMLNode *bodyNode = [parser body];
         NSArray *cellNodes = [bodyNode findChildTags:@"div"];
         for (HTMLNode *cellNode in cellNodes) {

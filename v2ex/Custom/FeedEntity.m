@@ -20,7 +20,7 @@
         _identifier       = [NSString stringWithFormat:@"%lld",[dictionary[@"id"] longLongValue]];
         _created          = [NSString stringWithFormat:@"%lld",[dictionary[@"created"] longLongValue]];
         _last_modified    = [NSString stringWithFormat:@"%lld",[dictionary[@"last_modified"] longLongValue]];
-        _last_touched     = [NSString stringWithFormat:@"%lld",[dictionary[@"last_touched"] longLongValue]];
+        
         _replies          = [NSString stringWithFormat:@"%lld",[dictionary[@"replies"] longLongValue]];
         
         _content          = [CommonUtil isEmpty:dictionary[@"content"]]?@"":dictionary[@"content"];
@@ -37,6 +37,9 @@
             self.node = [[NodeModel alloc]initWithDictionary:dictionary[@"node"]];;
         }
         
+        
+        NSString * lastTouchString = [CommonUtil dateStringTime:[NSString stringWithFormat:@"%lld",[dictionary[@"last_touched"] longLongValue]]];
+        _last_touched = lastTouchString;
     }
     
     return self;

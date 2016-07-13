@@ -14,7 +14,7 @@
 #import "UIImageView+WebCache.h"
 #import "Consts.h"
 #import "HTMLParser.h"
-#import "FeedEntity.h"
+
 //#import "UserInfo.h"
 
 static CommonUtil *defaultUtil = nil;
@@ -1205,11 +1205,8 @@ static CommonUtil *defaultUtil = nil;
     return [NSString stringWithFormat:@"%ld秒钟",cmps.second];
 }
 
-+ (NSString *)stringFromHtmlString:(id)responseObject{
-    
-    NSString * returnString;
-    
-//    NSMutableArray *topicArray = [[NSMutableArray alloc] init];
++ (NSArray *)feedEntityListFromHtmlString:(id)responseObject{
+    NSMutableArray *FeedEntityList = [[NSMutableArray alloc] init];
     
     @autoreleasepool {
         
@@ -1224,14 +1221,17 @@ static CommonUtil *defaultUtil = nil;
             return nil;
         }
         
-        FeedEntity * feedEntity = [[FeedEntity alloc]init];
-        feedEntity.member = [[MemberModel alloc]init];
-        feedEntity.node = [[NodeModel alloc]init];
+        
         
         HTMLNode *bodyNode = [parser body];
         NSArray *cellNodes = [bodyNode findChildTags:@"div"];
         for (HTMLNode *cellNode in cellNodes) {
             //<div class="cell item" style="">
+            
+            FeedEntity * feedEntity = [[FeedEntity alloc]init];
+            feedEntity.member = [[MemberModel alloc]init];
+            feedEntity.node = [[NodeModel alloc]init];
+            
             if ([[cellNode getAttributeNamed:@"class"] isEqualToString:@"cell item"]) {
                 //<td width="10"></td>
                 NSArray *tdNodes = [cellNode findChildTags:@"td"];
@@ -1247,7 +1247,7 @@ static CommonUtil *defaultUtil = nil;
                         if (userIdNode) {
                             //名称
                             NSString *idUrlString = [userIdNode getAttributeNamed:@"href"];
-                            feedEntity.node.name = [[idUrlString componentsSeparatedByString:@"/"] lastObject];
+                            feedEntity.member.username = [[idUrlString componentsSeparatedByString:@"/"] lastObject];
                             
                         }
                         HTMLNode *avatarNode = [tdNode findChildTag:@"img"];
@@ -1283,9 +1283,11 @@ static CommonUtil *defaultUtil = nil;
                                 
                             }
                             if ([titleNode.rawContents rangeOfString:@"最后回复"].location != NSNotFound || [titleNode.rawContents rangeOfString:@"前"].location != NSNotFound){
+                                //多分钟前最后回复来自
+//                                NSLog(@"titleNode.rawContents:%@",titleNode.allContents);
+                                feedEntity.last_touched = [[titleNode.allContents componentsSeparatedByString:@"  •  最后"]firstObject];
                                 
-                                NSLog(@"titleNode.rawContents:%@",titleNode.allContents);
-                                
+                                NSLog(@"last_touched%@",feedEntity.last_touched);
                             }
                             
                             
@@ -1293,9 +1295,11 @@ static CommonUtil *defaultUtil = nil;
                         
                     }
                     if ([content rangeOfString:@"class=\"count_livid\""].location != NSNotFound) {
-                        
+                        //回复数
                         HTMLNode *replyNode = [tdNode findChildTag:@"a"];
                         feedEntity.replies = replyNode.allContents;
+                        
+                        //回复单id
                         NSString *replyString = [replyNode getAttributeNamed:@"href"];
                         feedEntity.identifier = [[[[replyString componentsSeparatedByString:@"#"] firstObject] componentsSeparatedByString:@"t/"] lastObject];
                         
@@ -1303,13 +1307,17 @@ static CommonUtil *defaultUtil = nil;
                         
                     }
                 }
-                
+                [FeedEntityList addObject:feedEntity];
             }
+            
+            //
+            
+            
         }
     }
         
-    
-    return returnString;
+    NSLog(@"count%ld",FeedEntityList.count);
+    return FeedEntityList;
 }
 
 

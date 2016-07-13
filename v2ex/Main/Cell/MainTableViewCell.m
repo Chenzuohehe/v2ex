@@ -42,12 +42,12 @@
     
     self.titleLabel.text = [CommonUtil isEmpty:detail.title]?@"":detail.title;
     
-    NSString * replyNumberStr = [NSString stringWithFormat:@"%@",detail.replies];
-    replyNumberStr = [CommonUtil isEmpty:replyNumberStr]?@"":replyNumberStr;
+//    NSString * replyNumberStr = [NSString stringWithFormat:@"%@",detail.replies];
+    NSString * replyNumberStr = [CommonUtil isEmpty:detail.replies]?@"0":detail.replies;
     [self.replyNumberButton setTitle:replyNumberStr forState:UIControlStateNormal];
     
-    NSString * lastTouchString = [CommonUtil dateStringTime:detail.last_touched];
-    self.replyStatusLabel.text = [NSString stringWithFormat:@"%@前",lastTouchString];
+//    NSString * lastTouchString = [CommonUtil dateStringTime:detail.last_touched];
+//    self.replyStatusLabel.text = [CommonUtil isEmpty:detail.last_touched]?@" ":detail.last_touched;
     
 }
 

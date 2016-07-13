@@ -7,6 +7,7 @@
 //
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "FeedEntity.h"
 
 typedef void(^BackUserIdentifyState)(NSString* identifyState);
 
@@ -341,5 +342,5 @@ typedef void(^BackUserIdentifyState)(NSString* identifyState);
  */
 + (NSString *)dateStringTime:(NSString *)timeNumber;
 
-+ (NSString *)stringFromHtmlString:(id)responseObject;
++ (NSArray *)feedEntityListFromHtmlString:(id)responseObject;
 @end

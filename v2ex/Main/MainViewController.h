@@ -11,4 +11,6 @@
 
 @interface MainViewController : BaseViewController
 
+@property (copy , nonatomic) NSString * 
+
 @end

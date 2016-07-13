@@ -86,12 +86,12 @@
     
     DetailViewController * detailController = [[DetailViewController alloc]initWithNibName:@"DetailViewController" bundle:nil];
     
-    NSDictionary * detailDic = self.dataArray[indexPath.row];
-    FeedEntity * detail = [[FeedEntity alloc]initWithDictionary:detailDic];
-    detailController.htmlString = detail.content_rendered;
-    detailController.identifier = detail.identifier;
-//    detailController.detail = detail;
-    detailController.detailDic = detailDic;
+//    NSDictionary * detailDic = self.dataArray[indexPath.row];
+//    FeedEntity * detail = [[FeedEntity alloc]initWithDictionary:detailDic];
+//    detailController.htmlString = detail.content_rendered;
+//    detailController.identifier = detail.identifier;
+////    detailController.detail = detail;
+//    detailController.detailDic = detailDic;
     [self.navigationController pushViewController:detailController animated:YES];
 }
 
@@ -103,8 +103,11 @@
 //    return 110;
     return [tableView fd_heightForCellWithIdentifier:@"Main" cacheByIndexPath:indexPath configuration:^(id cell) {
         
-        NSDictionary * detailDic = self.dataArray[indexPath.row];
-        FeedEntity * detail = [[FeedEntity alloc]initWithDictionary:detailDic];
+//        NSDictionary * detailDic = self.dataArray[indexPath.row];
+//        FeedEntity * detail = [[FeedEntity alloc]initWithDictionary:detailDic];
+        
+        
+        FeedEntity * detail = self.dataArray[indexPath.row];
         [cell setFeedEntity:detail];
     }];
 }
@@ -123,8 +126,7 @@
 {
     
     MainTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"Main"];
-    NSDictionary * detailDic = self.dataArray[indexPath.row];
-    FeedEntity * detail = [[FeedEntity alloc]initWithDictionary:detailDic];
+    FeedEntity * detail = self.dataArray[indexPath.row];
     [cell setFeedEntity:detail];
     
     return cell;
@@ -181,8 +183,10 @@
 //        NSString * dataString = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
 //        NSLog(@"data:%@",dataString);
         
-        NSString * string = [CommonUtil stringFromHtmlString:responseObject];
+       self.dataArray = [CommonUtil feedEntityListFromHtmlString:responseObject];
+        [self.mainTableView reloadData];
         
+        [self.mainTableView.mj_header endRefreshing];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         

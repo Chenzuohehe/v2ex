@@ -1246,14 +1246,10 @@ static CommonUtil *defaultUtil = nil;
                             //名称
                             NSString *idUrlString = [userIdNode getAttributeNamed:@"href"];
                             feedEntity.member.username = [[idUrlString componentsSeparatedByString:@"/"] lastObject];
-                            
                         }
                         HTMLNode *avatarNode = [tdNode findChildTag:@"img"];
                         if (avatarNode) {
                             NSString *avatarString = [avatarNode getAttributeNamed:@"src"];
-//                            if ([avatarString hasPrefix:@"//"]) {
-//                                avatarString = [@"https:" stringByAppendingString:avatarString];
-//                            }
                             //替换成头像大图
                             if ([avatarString rangeOfString:@"normal.png"].location != NSNotFound) {
                                 avatarString = [avatarString stringByReplacingOccurrencesOfString:@"normal.png" withString:@"large.png"];
@@ -1288,35 +1284,25 @@ static CommonUtil *defaultUtil = nil;
                                     NSLog(@"titleNode.rawContents:%@",titleNode.allContents);
                                     feedEntity.last_touched = [NSString stringWithFormat:@"%@",titleNode.allContents];
                                 }
-                                
                             }
-                            
                         }
-                        
                     }
                     if ([content rangeOfString:@"class=\"count_livid\""].location != NSNotFound) {
                         //回复数
                         HTMLNode *replyNode = [tdNode findChildTag:@"a"];
                         feedEntity.replies = replyNode.allContents;
                         
-                        //回复单id
+                        //回复单后缀
                         NSString *replyString = [replyNode getAttributeNamed:@"href"];
-                        feedEntity.identifier = [[[[replyString componentsSeparatedByString:@"#"] firstObject] componentsSeparatedByString:@"t/"] lastObject];
-                        
-                        
+                        feedEntity.identifier = replyString;
                         
                     }
                 }
                 [FeedEntityList addObject:feedEntity];
             }
-            
-            //
-            
-            
         }
     }
-        
-    NSLog(@"count%ld",FeedEntityList.count);
+    
     return FeedEntityList;
 }
 

@@ -25,6 +25,7 @@
 		04BEADB01D264B300058BF56 /* MemberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEADAF1D264B300058BF56 /* MemberModel.m */; };
 		04D4D5F21D2DF1BC002DC19B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D4D5F01D2DF1BC002DC19B /* DetailViewController.m */; };
 		04D4D5F31D2DF1BC002DC19B /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D4D5F11D2DF1BC002DC19B /* DetailViewController.xib */; };
+		04F15D2F1D37AE83002DC4A5 /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F15D2E1D37AE83002DC4A5 /* DetailModel.m */; };
 		2E235570DEFDB772E022AC1E /* libPods-v2ex.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B691E2FF96C807D19E869AF9 /* libPods-v2ex.a */; };
 		4E138D8A1D255B3100AE5FF3 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E138D831D255B3100AE5FF3 /* MainViewController.m */; };
 		4E138D8B1D255B3100AE5FF3 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E138D841D255B3100AE5FF3 /* MainViewController.xib */; };
@@ -92,6 +93,8 @@
 		04D4D5EF1D2DF1BC002DC19B /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		04D4D5F01D2DF1BC002DC19B /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		04D4D5F11D2DF1BC002DC19B /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		04F15D2D1D37AE83002DC4A5 /* DetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailModel.h; sourceTree = "<group>"; };
+		04F15D2E1D37AE83002DC4A5 /* DetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailModel.m; sourceTree = "<group>"; };
 		2E103AE33E32582A228905EF /* Pods-v2ex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-v2ex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-v2ex/Pods-v2ex.debug.xcconfig"; sourceTree = "<group>"; };
 		2F782EDFABF2C5278796AC09 /* Pods-v2ex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-v2ex.release.xcconfig"; path = "Pods/Target Support Files/Pods-v2ex/Pods-v2ex.release.xcconfig"; sourceTree = "<group>"; };
 		4E138D821D255B3100AE5FF3 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -275,6 +278,8 @@
 				04BEADAF1D264B300058BF56 /* MemberModel.m */,
 				04BEADAB1D264B260058BF56 /* NodeModel.h */,
 				04BEADAC1D264B260058BF56 /* NodeModel.m */,
+				04F15D2D1D37AE83002DC4A5 /* DetailModel.h */,
+				04F15D2E1D37AE83002DC4A5 /* DetailModel.m */,
 				04BEADA21D2615AC0058BF56 /* CommonUtil.h */,
 				04BEADA31D2615AC0058BF56 /* CommonUtil.m */,
 				0445CAE41D2B8CD80068513A /* CZFPSLabel.h */,
@@ -517,6 +522,7 @@
 				4E138DA41D25611600AE5FF3 /* MainTableViewCell.m in Sources */,
 				04BEADA41D2615AC0058BF56 /* CommonUtil.m in Sources */,
 				4E138D981D255E7700AE5FF3 /* LeftMenuViewController.m in Sources */,
+				04F15D2F1D37AE83002DC4A5 /* DetailModel.m in Sources */,
 				4E138D941D255E1C00AE5FF3 /* BaseViewController.m in Sources */,
 				4E138D9D1D255E8E00AE5FF3 /* RightMenuViewController.m in Sources */,
 				4E2C958A1D331C13002AC366 /* ContentTableViewCell.m in Sources */,

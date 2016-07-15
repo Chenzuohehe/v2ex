@@ -356,7 +356,7 @@ typedef void(^BackUserIdentifyState)(NSString* identifyState);
  *
  *  @param responseObject data
  *
- *  @return <#return value description#>
+ *  @return
  */
 + (NSArray *)feedEntityDetailFromHtmlString:(id)responseObject;
 

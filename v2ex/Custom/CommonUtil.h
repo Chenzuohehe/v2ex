@@ -342,5 +342,22 @@ typedef void(^BackUserIdentifyState)(NSString* identifyState);
  */
 + (NSString *)dateStringTime:(NSString *)timeNumber;
 
+/**
+ *  根据data类型html获取feedEntitylist
+ *
+ *  @param responseObject data
+ *
+ *  @return NSArray feedEntity类型
+ */
 + (NSArray *)feedEntityListFromHtmlString:(id)responseObject;
+
+/**
+ *  根据data类型html获取feedEntitydetail
+ *
+ *  @param responseObject data
+ *
+ *  @return <#return value description#>
+ */
++ (NSArray *)feedEntityDetailFromHtmlString:(id)responseObject;
+
 @end

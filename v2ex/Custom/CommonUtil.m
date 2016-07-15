@@ -1268,7 +1268,7 @@ static CommonUtil *defaultUtil = nil;
                                 //标题
                                 HTMLNode *tNode = [titleNode findChildTag:@"a"];
                                 feedEntity.title = tNode.allContents;
-                                NSLog(@"title:%@",feedEntity.title);
+                                
                             }
                             if ([titleString rangeOfString:@"class=\"node\""].location != NSNotFound) {
                                 //tag
@@ -1281,7 +1281,6 @@ static CommonUtil *defaultUtil = nil;
                                 
                                 if ([titleString rangeOfString:@"最后回复"].location != NSNotFound || [titleString rangeOfString:@"前"].location != NSNotFound){
                                     
-                                    NSLog(@"titleNode.rawContents:%@",titleNode.allContents);
                                     feedEntity.last_touched = [NSString stringWithFormat:@"%@",titleNode.allContents];
                                 }
                             }

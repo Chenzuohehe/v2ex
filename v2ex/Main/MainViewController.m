@@ -85,12 +85,9 @@
     
     DetailViewController * detailController = [[DetailViewController alloc]initWithNibName:@"DetailViewController" bundle:nil];
     
-//    NSDictionary * detailDic = self.dataArray[indexPath.row];
-//    FeedEntity * detail = [[FeedEntity alloc]initWithDictionary:detailDic];
-//    detailController.htmlString = detail.content_rendered;
-//    detailController.identifier = detail.identifier;
-////    detailController.detail = detail;
-//    detailController.detailDic = detailDic;
+    FeedEntity * detail = self.dataArray[indexPath.row];
+    detailController.identifier = detail.identifier;
+    
     [self.navigationController pushViewController:detailController animated:YES];
 }
 

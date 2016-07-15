@@ -11,6 +11,7 @@
 #import "MainTableViewCell.h"
 #import "ContentTableViewCell.h"
 #import <UITableView+FDTemplateLayoutCell.h>
+#import "DetailModel.h"
 
 #import "MJRefresh.h"
 #import "FeedEntity.h"
@@ -98,7 +99,9 @@
         
         return;
     }else{
-        uri = [NSString stringWithFormat:@"https://www.v2ex.com%@",self.identifier];
+//        uri = [NSString stringWithFormat:@"https://www.v2ex.com%@",self.identifier];
+        uri = @"https://www.v2ex.com/t/292322#reply173";
+        NSLog(@"%@",uri);
     }
     
     //获取html源码方法1 但是会占据主线程
@@ -114,6 +117,8 @@
     [manager GET:uri parameters:param progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        DetailModel * detail = [CommonUtil feedEntityDetailFromHtmlString:responseObject];
         
 //        NSString * dataString = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
 //        NSLog(@"%@",dataString);

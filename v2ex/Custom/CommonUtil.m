@@ -1210,7 +1210,6 @@ static CommonUtil *defaultUtil = nil;
     
     @autoreleasepool {
         
-        
         NSString *htmlString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         
         NSError *error = nil;
@@ -1305,5 +1304,64 @@ static CommonUtil *defaultUtil = nil;
     return FeedEntityList;
 }
 
+/**
+ *  根据data类型html获取feedEntitydetail
+ *
+ *  @param responseObject data
+ *
+ *  @return DetailModel
+ */
++ (DetailModel *)feedEntityDetailFromHtmlString:(id)responseObject{
+    DetailModel * detail = [[DetailModel alloc]init];
+    @autoreleasepool {
+        NSString *htmlString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        
+        NSError *error = nil;
+        HTMLParser *parser = [[HTMLParser alloc] initWithString:htmlString error:&error];
+        
+        if (error) {
+            NSLog(@"Error: %@", error);
+            return nil;
+        }
+        
+        HTMLNode *bodyNode = [parser body];
+        NSArray *cellNodes = [bodyNode findChildTags:@"div"];
+        for (HTMLNode *cellNode in cellNodes) {
+            
+            if ([[cellNode getAttributeNamed:@"class"] isEqualToString:@"header"]) {
+//                NSLog(@"cellNode.rawContents:%@",cellNode.rawContents);
+                
+                //帖子详情之头像
+                HTMLNode *avatarNode = [cellNode findChildTag:@"img"];
+                if (avatarNode) {
+                    NSString *avatarString = [avatarNode getAttributeNamed:@"src"];
+                    //替换成头像大图
+                    if ([avatarString rangeOfString:@"normal.png"].location != NSNotFound) {
+                        avatarString = [avatarString stringByReplacingOccurrencesOfString:@"normal.png" withString:@"large.png"];
+                        
+                    }
+                    detail.headImageUrl = avatarString;
+                }
+                
+                NSArray * aNodes = [cellNode findChildTags:@"div"];
+                for (HTMLNode * node in aNodes) {
+                    if ([node.rawContents rangeOfString:@"class=\"fr\""].location != NSNotFound) {
+                        HTMLNode *nameNode = [node findChildTag:@"a"];
+                        if (nameNode) {
+                            //名称
+                            NSString *nameString = [nameNode getAttributeNamed:@"href"];
+                            detail.userName = [[nameString componentsSeparatedByString:@"/"]lastObject];
+                            
+                        }
+                    }
+                }
+                
+                
+            }
+        }
+    }
+    
+    return detail;
+}
 
 @end

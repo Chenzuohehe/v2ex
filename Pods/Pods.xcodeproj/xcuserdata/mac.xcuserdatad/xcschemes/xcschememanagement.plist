@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MJRefresh.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -29,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TTTAttributedLabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UITableView+FDTemplateLayoutCell.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,7 +52,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>139DDE5F6957A0C6116E5834DDA80E0F</key>
+		<key>1EE14FFEB6EED5B26B9F30C90F437F75</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5442698CD93773B100BCF9FBE9FEBC13</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6791C2E5E0FBA7E882C2941B33605B32</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,12 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7EB296A277E8A60E12C4D46F7032947C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>80E4EB1D8CE0772A4D5DFD78F893CAA5</key>
+		<key>78CA7F96FBF2766C15760D6DDAEE8C6D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +82,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B49CA582CCD074ABE849F9E863E50738</key>
+		<key>A44ED60B19CBF68D14824FD939E4AE22</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BF5793752ED379163FD11327B7388081</key>
+		<key>C7868509CEFDD5243EFF02FDE6938B36</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE2F1D7B9D9FCEA148517E4657B243F4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

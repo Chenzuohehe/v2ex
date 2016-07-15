@@ -10,4 +10,12 @@
 
 @interface DetailModel : NSObject
 
+@property (copy , nonatomic  ) NSString * headImageUrl;
+@property (copy , nonatomic  ) NSString * userName;
+@property (copy , nonatomic  ) NSString * tag;
+@property (copy , nonatomic  ) NSString * repilesStatus;
+@property (copy , nonatomic  ) NSString * title;
+@property (copy , nonatomic  ) NSString * content;
+
+
 @end

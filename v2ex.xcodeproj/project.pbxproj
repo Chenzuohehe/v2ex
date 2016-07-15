@@ -239,14 +239,14 @@
 		04F15D311D388CB2002DC4A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				04F15D321D388CB2002DC4A5 /* DetailModel.h */,
-				04F15D331D388CB2002DC4A5 /* DetailModel.m */,
 				04F15D341D388CB2002DC4A5 /* FeedEntity.h */,
 				04F15D351D388CB2002DC4A5 /* FeedEntity.m */,
 				04F15D361D388CB2002DC4A5 /* MemberModel.h */,
 				04F15D371D388CB2002DC4A5 /* MemberModel.m */,
 				04F15D381D388CB2002DC4A5 /* NodeModel.h */,
 				04F15D391D388CB2002DC4A5 /* NodeModel.m */,
+				04F15D321D388CB2002DC4A5 /* DetailModel.h */,
+				04F15D331D388CB2002DC4A5 /* DetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";

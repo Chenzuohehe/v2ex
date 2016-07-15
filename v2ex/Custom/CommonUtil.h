@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "FeedEntity.h"
+#import "DetailModel.h"
 
 typedef void(^BackUserIdentifyState)(NSString* identifyState);
 
@@ -356,8 +357,8 @@ typedef void(^BackUserIdentifyState)(NSString* identifyState);
  *
  *  @param responseObject data
  *
- *  @return
+ *  @return DetailModel
  */
-+ (NSArray *)feedEntityDetailFromHtmlString:(id)responseObject;
++ (DetailModel *)feedEntityDetailFromHtmlString:(id)responseObject;
 
 @end

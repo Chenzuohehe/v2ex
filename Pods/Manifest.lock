@@ -20,6 +20,7 @@ PODS:
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
+  - TTTAttributedLabel (1.13.4)
   - UITableView+FDTemplateLayoutCell (1.4)
 
 DEPENDENCIES:
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - MJRefresh
   - RESideMenu (~> 4.0.7)
   - SDWebImage (~> 3.7.5)
+  - TTTAttributedLabel
   - UITableView+FDTemplateLayoutCell (~> 1.4)
 
 SPEC CHECKSUMS:
@@ -36,8 +38,9 @@ SPEC CHECKSUMS:
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
 
-PODFILE CHECKSUM: 6ffa0eacf5008f0c4d197b6491fabbf4730c573c
+PODFILE CHECKSUM: 622741ec2a3719cfe8a3fb65b7061b76a8c6c6d6
 
 COCOAPODS: 1.0.1

@@ -14,7 +14,6 @@
 #import "DetailModel.h"
 
 #import "MJRefresh.h"
-#import "FeedEntity.h"
 #import "Consts.h"
 
 @interface DetailViewController ()<UIWebViewDelegate>
@@ -47,7 +46,6 @@
 
 - (void)registerCell
 {
-    [self.mainTableView registerNib:[UINib nibWithNibName:@"RepliesTableViewCell" bundle:nil] forCellReuseIdentifier:@"replies"];
     [self.mainTableView registerNib:[UINib nibWithNibName:@"ContentTableViewCell" bundle:nil] forCellReuseIdentifier:@"content"];
 }
 
@@ -65,7 +63,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return [tableView fd_heightForCellWithIdentifier:@"content" cacheByIndexPath:indexPath configuration:^(id cell) {
-        
+        [cell setDetail:self.detail];
     }];
     
 }
@@ -85,7 +83,7 @@
 {
     
     ContentTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"content"];
-    
+    [cell setDetail:self.detail];
     return cell;
 }
 
@@ -100,12 +98,9 @@
         return;
     }else{
 //        uri = [NSString stringWithFormat:@"https://www.v2ex.com%@",self.identifier];
-        uri = @"https://www.v2ex.com/t/292322#reply173";
+        uri = @"https://www.v2ex.com/t/292768#reply74";
         NSLog(@"%@",uri);
     }
-    
-    //获取html源码方法1 但是会占据主线程
-    //    NSString *dataString = [NSString stringWithContentsOfURL:[NSURL URLWithString:uri] encoding:NSUTF8StringEncoding error:nil];  //htmlString是html网页的地址
     
     NSDictionary *param = [NSDictionary dictionary];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -118,10 +113,8 @@
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        DetailModel * detail = [CommonUtil feedEntityDetailFromHtmlString:responseObject];
-        
-//        NSString * dataString = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
-//        NSLog(@"%@",dataString);
+        self.detail = [CommonUtil feedEntityDetailFromHtmlString:responseObject];
+        [self.mainTableView reloadData];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         

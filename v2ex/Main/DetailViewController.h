@@ -8,11 +8,15 @@
 
 #import "BaseViewController.h"
 #import "FeedEntity.h"
+#import "DetailModel.h"
 
 @interface DetailViewController : BaseViewController
 
-@property (strong , nonatomic) FeedEntity * detail;
+//@property (strong , nonatomic) FeedEntity * detail;
 @property (copy , nonatomic) NSString * htmlString;
 @property (copy , nonatomic) NSString * identifier;
+@property (strong , nonatomic) DetailModel * detail;
+
+
 @property (strong , nonatomic) NSDictionary * detailDic;
 @end

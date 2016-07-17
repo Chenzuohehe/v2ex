@@ -1329,9 +1329,8 @@ static CommonUtil *defaultUtil = nil;
         for (HTMLNode *cellNode in cellNodes) {
             
             if ([[cellNode getAttributeNamed:@"class"] isEqualToString:@"header"]) {
-//                NSLog(@"cellNode.rawContents:%@",cellNode.rawContents);
                 
-                //帖子详情之头像
+                //帖子详情之头像headImage
                 HTMLNode *avatarNode = [cellNode findChildTag:@"img"];
                 if (avatarNode) {
                     NSString *avatarString = [avatarNode getAttributeNamed:@"src"];
@@ -1343,21 +1342,43 @@ static CommonUtil *defaultUtil = nil;
                     detail.headImageUrl = avatarString;
                 }
                 
-                NSArray * aNodes = [cellNode findChildTags:@"div"];
-                for (HTMLNode * node in aNodes) {
-                    if ([node.rawContents rangeOfString:@"class=\"fr\""].location != NSNotFound) {
-                        HTMLNode *nameNode = [node findChildTag:@"a"];
-                        if (nameNode) {
-                            //名称
-                            NSString *nameString = [nameNode getAttributeNamed:@"href"];
-                            detail.userName = [[nameString componentsSeparatedByString:@"/"]lastObject];
-                            
+                NSArray *aNodes = [cellNode findChildTags:@"a"];
+                for (HTMLNode * aNode in aNodes) {
+                    //
+                    NSString *hrefString = [aNode getAttributeNamed:@"href"];
+                    
+                    if (hrefString) {
+                        //userName
+                        if ([hrefString rangeOfString:@"/member/"].location != NSNotFound) {
+                            detail.userName = [[hrefString componentsSeparatedByString:@"/"]lastObject];
+                        }
+                        //tag
+                        if ([hrefString rangeOfString:@"/go/"].location != NSNotFound) {
+                            detail.tag = aNode.allContents;
                         }
                     }
                 }
                 
+                //repilesStatus
+                if ([cellNode.rawContents rangeOfString:@"small class=\"gray\""].location != NSNotFound) {
+                    HTMLNode * repliesStatusNode = [cellNode findChildTag:@"small"];
+                    detail.repilesStatus = repliesStatusNode.allContents;
+                }
+                
+                //title
+                if ([cellNode.rawContents rangeOfString:@"<h1>"].location != NSNotFound) {
+                    HTMLNode * titleNode = [cellNode findChildTag:@"h1"];
+                    detail.title = titleNode.allContents;
+                }
                 
             }
+            //content
+            if ([[cellNode getAttributeNamed:@"class"] isEqualToString:@"markdown_body"]) {
+//                NSLog(@"markdown_body:%@ \n\n %@",cellNode.allContents,cellNode.rawContents);
+                detail.content = cellNode.rawContents;
+            }
+            
+            
         }
     }
     

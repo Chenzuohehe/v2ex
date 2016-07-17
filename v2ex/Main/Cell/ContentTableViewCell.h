@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FeedEntity.h"
+
+#import "DetailModel.h"
 @interface ContentTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -16,7 +17,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *repliceTimeLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tagLabel;
 
-- (void)setFeedEntity:(FeedEntity *)detail;
+- (void)setDetail:(DetailModel *)detail;
 
 @end

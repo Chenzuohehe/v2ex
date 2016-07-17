@@ -6,5 +6,6 @@ pod 'UITableView+FDTemplateLayoutCell', '~> 1.4’
 pod 'MJRefresh'
 pod 'MBProgressHUD', '~> 0.9.2'
 pod 'SDWebImage', '~>3.7.5'
+pod 'TTTAttributedLabel'
 
 end

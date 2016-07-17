@@ -27,24 +27,27 @@
     
 }
 
-- (void)setFeedEntity:(FeedEntity *)detail
+- (void)setDetail:(DetailModel *)detail
 {
+    /**
+     *  
+     @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+     @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
+     @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+     @property (weak, nonatomic) IBOutlet UILabel *repliceTimeLabel;
+     
+     @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+     @property (weak, nonatomic) IBOutlet UILabel *tagLabel;
+     
+     */
     
-//    if (![CommonUtil dictIsEmpty:detail.member]) {
-//        NSString * iamgeUrl = [NSString stringWithFormat:@"https:%@",[CommonUtil isEmpty:detail.member[@"avatar_large"]]?@"":detail.member[@"avatar_large"]];
-//        [self.headImageView sd_setImageWithURL:[NSURL URLWithString:iamgeUrl] placeholderImage:nil];
-//        self.userNameLabel.text = [CommonUtil isEmpty:detail.member[@"username"]]?@"":detail.member[@"username"];
-//    }
-
-    NSString * iamgeUrl = [NSString stringWithFormat:@"https:%@",[CommonUtil isEmpty:detail.member.avatar_large]?@"":detail.member.avatar_large];
+    NSString * iamgeUrl = [NSString stringWithFormat:@"https:%@",[CommonUtil isEmpty:detail.headImageUrl]?@"":detail.headImageUrl];
     [self.headImageView sd_setImageWithURL:[NSURL URLWithString:iamgeUrl] placeholderImage:nil];
-    self.userNameLabel.text = [CommonUtil isEmpty:detail.member.username]?@"":detail.member.username;
+    self.userNameLabel.text = [CommonUtil isEmpty:detail.userName]?@"":detail.userName;
     
     self.titleLabel.text = [CommonUtil isEmpty:detail.title]?@"":detail.title;
-//
-    NSString * lastTouchString = [CommonUtil dateStringTime:detail.last_touched];
-    self.repliceTimeLabel.text = [NSString stringWithFormat:@"%@前",lastTouchString];
-    self.contentLabel.text = detail.content;
+    self.repliceTimeLabel.text = [CommonUtil isEmpty:detail.repilesStatus]?@"":detail.repilesStatus;
+    self.contentLabel.text = [CommonUtil isEmpty:detail.content]?@"":detail.content;
 }
 
 

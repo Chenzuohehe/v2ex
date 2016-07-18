@@ -51,31 +51,34 @@
                         <color key="textColor" red="0.42352941179999998" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mmq-1o-RAN">
+                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mmq-1o-RAN">
                         <rect key="frame" x="10" y="97" width="300" height="1"/>
                         <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="uCp-DP-Vzy"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="contentLabelcontentLabelcontentLabelcontentLabelcontentLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrE-pc-vRv">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cO-pt-HOw">
+                        <rect key="frame" x="10" y="106" width="300" height="21"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <string key="text">TTTAttributedLabelTTTAttributedLabelTTTAttributedLabelTTTAttributedLabelTTTAttributedLabelTTTAttributedLabelTTTAttributedLabelTTTAttributedLabelTTTAttributedLabelTTTAttributedLabelTTTAttributedLabelTTTAttributedLabel</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="contentLabelcontentLabelcontentLabelcontentLabelcontentLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrE-pc-vRv">
                         <rect key="frame" x="10" y="68" width="300" height="21"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rIx-9Z-x7L">
-                        <rect key="frame" x="10" y="106" width="300" height="21"/>
-                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
-                    </webView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Bq5-xE-0n3" firstAttribute="leading" secondItem="15m-2K-OyP" secondAttribute="trailing" constant="8" id="29k-yj-b37"/>
                     <constraint firstItem="BrE-pc-vRv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="84T-PU-hym"/>
                     <constraint firstItem="Mmq-1o-RAN" firstAttribute="top" secondItem="BrE-pc-vRv" secondAttribute="bottom" constant="8" id="Cua-Sx-tuI"/>
                     <constraint firstItem="Mmq-1o-RAN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="F6w-oO-s21"/>
-                    <constraint firstItem="rIx-9Z-x7L" firstAttribute="top" secondItem="Mmq-1o-RAN" secondAttribute="bottom" constant="8" id="HeZ-ou-9t1"/>
                     <constraint firstItem="BrE-pc-vRv" firstAttribute="top" secondItem="k4c-1S-QlR" secondAttribute="bottom" constant="8" id="JCV-eS-aCl"/>
                     <constraint firstItem="k4c-1S-QlR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="Jlz-Lo-07r"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Mmq-1o-RAN" secondAttribute="trailing" constant="2" id="MuG-eq-a2o"/>
@@ -83,17 +86,19 @@
                     <constraint firstAttribute="trailingMargin" secondItem="BrE-pc-vRv" secondAttribute="trailing" constant="2" id="RaP-aZ-fNp"/>
                     <constraint firstItem="15m-2K-OyP" firstAttribute="leading" secondItem="k4c-1S-QlR" secondAttribute="trailing" constant="8" id="TA7-Ug-ELw"/>
                     <constraint firstItem="YP8-dU-YZz" firstAttribute="leading" secondItem="k4c-1S-QlR" secondAttribute="trailing" constant="8" id="TnF-AM-mNY"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="5cO-pt-HOw" secondAttribute="bottom" constant="2" id="Wx6-EJ-ZTc"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Bq5-xE-0n3" secondAttribute="trailing" constant="2" id="XRA-SU-6RU"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="rIx-9Z-x7L" secondAttribute="bottom" constant="2.5" id="eHT-7I-BL2"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="rIx-9Z-x7L" secondAttribute="trailing" constant="2" id="gPw-VY-pTm"/>
+                    <constraint firstItem="5cO-pt-HOw" firstAttribute="top" secondItem="Mmq-1o-RAN" secondAttribute="bottom" constant="8" id="g9s-q4-MWA"/>
                     <constraint firstItem="k4c-1S-QlR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="geI-Od-gg0"/>
                     <constraint firstItem="Bq5-xE-0n3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="hOW-KL-vQK"/>
                     <constraint firstItem="YP8-dU-YZz" firstAttribute="top" secondItem="15m-2K-OyP" secondAttribute="bottom" constant="2" id="hT2-Yw-7yZ"/>
+                    <constraint firstItem="5cO-pt-HOw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="hTc-Gs-1ud"/>
                     <constraint firstItem="15m-2K-OyP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="hZb-X4-Qab"/>
-                    <constraint firstItem="rIx-9Z-x7L" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="scO-Eb-SvO"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="5cO-pt-HOw" secondAttribute="trailing" constant="2" id="y65-r7-H2l"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="contentLabel" destination="5cO-pt-HOw" id="DPI-AB-1cj"/>
                 <outlet property="headImageView" destination="k4c-1S-QlR" id="HPa-vA-hgX"/>
                 <outlet property="repliceTimeLabel" destination="YP8-dU-YZz" id="cTv-7X-PLp"/>
                 <outlet property="tagLabel" destination="Bq5-xE-0n3" id="z9q-KC-mYV"/>

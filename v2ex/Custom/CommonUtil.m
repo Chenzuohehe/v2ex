@@ -1275,12 +1275,12 @@ static CommonUtil *defaultUtil = nil;
                                 feedEntity.node.title = tNode.allContents;
                                 
                             }
-                            feedEntity.last_touched = nil;
+                            feedEntity.replyStatus = nil;
                             if ([titleString rangeOfString:@"class=\"small fade\""].location !=NSNotFound) {
                                 
                                 if ([titleString rangeOfString:@"最后回复"].location != NSNotFound || [titleString rangeOfString:@"前"].location != NSNotFound){
                                     
-                                    feedEntity.last_touched = [NSString stringWithFormat:@"%@",titleNode.allContents];
+                                    feedEntity.replyStatus = [NSString stringWithFormat:@"%@",titleNode.allContents];
                                 }
                             }
                         }
@@ -1293,6 +1293,7 @@ static CommonUtil *defaultUtil = nil;
                         //回复单后缀
                         NSString *replyString = [replyNode getAttributeNamed:@"href"];
                         feedEntity.identifier = replyString;
+                        
                         
                     }
                 }
@@ -1375,7 +1376,7 @@ static CommonUtil *defaultUtil = nil;
             //content
             if ([[cellNode getAttributeNamed:@"class"] isEqualToString:@"markdown_body"]) {
 //                NSLog(@"markdown_body:%@ \n\n %@",cellNode.allContents,cellNode.rawContents);
-                detail.content = cellNode.rawContents;
+                detail.content = cellNode.allContents;
             }
             
             

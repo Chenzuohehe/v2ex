@@ -47,7 +47,7 @@
     [self.replyNumberButton setTitle:replyNumberStr forState:UIControlStateNormal];
     
 //    NSString * lastTouchString = [CommonUtil dateStringTime:detail.last_touched];
-    self.replyStatusLabel.text = [CommonUtil isEmpty:detail.last_touched]?@" ":detail.last_touched;
+    self.replyStatusLabel.text = [CommonUtil isEmpty:detail.replyStatus]?@" ":detail.replyStatus;
     
 }
 

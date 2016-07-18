@@ -32,6 +32,7 @@
     [super viewDidLoad];
     
     [self loadHtmlData];
+    [self loadReplies];
     [self registerCell];
     self.mainTableView.separatorStyle = NO;
     
@@ -47,6 +48,8 @@
 - (void)registerCell
 {
     [self.mainTableView registerNib:[UINib nibWithNibName:@"ContentTableViewCell" bundle:nil] forCellReuseIdentifier:@"content"];
+    
+    [self.mainTableView registerNib:[UINib nibWithNibName:@"RepliesTableViewCell" bundle:nil] forCellReuseIdentifier:@"replies"];
 }
 
 #pragma mark -
@@ -62,29 +65,49 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [tableView fd_heightForCellWithIdentifier:@"content" cacheByIndexPath:indexPath configuration:^(id cell) {
-        [cell setDetail:self.detail];
-    }];
     
+    if (indexPath.section == 0) {
+        return [tableView fd_heightForCellWithIdentifier:@"content" cacheByIndexPath:indexPath configuration:^(id cell) {
+            [cell setDetail:self.detail];
+        }];
+    }else{
+        return [tableView fd_heightForCellWithIdentifier:@"replies" cacheByIndexPath:indexPath configuration:^(id cell) {
+            NSDictionary * dic = self.repliesArray[indexPath.row];
+            FeedEntity * detail = [[FeedEntity alloc]initWithDictionary:dic];
+            [cell setFeedEntity:detail];
+        }];
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex
 {
+    if (sectionIndex == 1) {
+        return self.repliesArray.count;
+    }else{
+        return 1;
+    }
     
-    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.section == 0) {
+        ContentTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"content"];
+        [cell setDetail:self.detail];
+        return cell;
+    }else{
+        RepliesTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"replies"];
+        NSDictionary * dic = self.repliesArray[indexPath.row];
+        FeedEntity * detail = [[FeedEntity alloc]initWithDictionary:dic];
+        [cell setFeedEntity:detail];
+        return cell;
+    }
     
-    ContentTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"content"];
-    [cell setDetail:self.detail];
-    return cell;
 }
 
 /**
@@ -97,9 +120,9 @@
         
         return;
     }else{
-//        uri = [NSString stringWithFormat:@"https://www.v2ex.com%@",self.identifier];
-        uri = @"https://www.v2ex.com/t/292768#reply74";
-        NSLog(@"%@",uri);
+        uri = [NSString stringWithFormat:@"https://www.v2ex.com%@",self.identifier];
+//        uri = @"https://www.v2ex.com/t/292768#reply74";
+//        NSLog(@"%@",uri);
     }
     
     NSDictionary *param = [NSDictionary dictionary];
@@ -114,7 +137,7 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         self.detail = [CommonUtil feedEntityDetailFromHtmlString:responseObject];
-        [self.mainTableView reloadData];
+        [self.mainTableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationRight];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
@@ -122,6 +145,27 @@
     
 }
 
-
+- (void)loadReplies
+{
+    NSString * uri =@"https://www.v2ex.com/api/replies/show.json?topic_id=";
+    NSString * replyString = self.identifier;
+    if ([replyString rangeOfString:@"#"].location != NSNotFound && [replyString rangeOfString:@"/"].location != NSNotFound) {
+        NSString * detailId = [[[[replyString componentsSeparatedByString:@"#"]firstObject]componentsSeparatedByString:@"/"]lastObject];
+        uri = [NSString stringWithFormat:@"%@%@",uri,detailId];
+    }
+    NSLog(@"%@",uri);
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:uri parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSArray * repliesArray = responseObject;
+        self.repliesArray = repliesArray;
+        NSLog(@"%ld",self.repliesArray.count);
+        [self.mainTableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationRight];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+}
 
 @end

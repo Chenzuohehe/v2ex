@@ -37,8 +37,8 @@
         }
         
         
-        NSString * lastTouchString = [CommonUtil dateStringTime:[NSString stringWithFormat:@"%lld",[dictionary[@"last_touched"] longLongValue]]];
-        _last_touched = lastTouchString;
+//        NSString * lastTouchString = [CommonUtil dateStringTime:[NSString stringWithFormat:@"%lld",[dictionary[@"last_touched"] longLongValue]]];
+        _last_touched = [NSString stringWithFormat:@"%lld",[dictionary[@"last_touched"] longLongValue]];
     }
     
     return self;

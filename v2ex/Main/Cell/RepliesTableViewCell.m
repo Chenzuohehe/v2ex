@@ -29,17 +29,11 @@
 
 - (void)setFeedEntity:(FeedEntity *)detail
 {
-//    
-//    if (![CommonUtil dictIsEmpty:detail.member]) {
-//        NSString * iamgeUrl = [NSString stringWithFormat:@"https:%@",[CommonUtil isEmpty:detail.member[@"avatar_large"]]?@"":detail.member[@"avatar_large"]];
-//        [self.headImageView sd_setImageWithURL:[NSURL URLWithString:iamgeUrl] placeholderImage:nil];
-//        self.nameLabel.text = [CommonUtil isEmpty:detail.member[@"username"]]?@"":detail.member[@"username"];
-//    }
     NSString * iamgeUrl = [NSString stringWithFormat:@"https:%@",[CommonUtil isEmpty:detail.member.avatar_large]?@"":detail.member.avatar_large];
     [self.headImageView sd_setImageWithURL:[NSURL URLWithString:iamgeUrl] placeholderImage:nil];
     self.nameLabel.text = [CommonUtil isEmpty:detail.member.username]?@"":detail.member.username;
     
-    NSString * lastTouchString = [CommonUtil dateStringTime:detail.last_touched];
+    NSString * lastTouchString = [CommonUtil dateStringTime:detail.last_modified];
     self.repliesTimeLabel.text = [NSString stringWithFormat:@"%@前",lastTouchString];
     
     self.contentLabel.text = detail.content;

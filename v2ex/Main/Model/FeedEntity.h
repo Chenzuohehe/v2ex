@@ -25,6 +25,8 @@
 @property (copy , nonatomic  ) NSString * last_touched;
 @property (copy , nonatomic  ) NSString * lastReply;
 
+@property (copy , nonatomic  ) NSString * replyStatus;
+
 @property (strong , nonatomic  ) MemberModel * member;
 @property (strong , nonatomic  ) NodeModel * node;
 @end

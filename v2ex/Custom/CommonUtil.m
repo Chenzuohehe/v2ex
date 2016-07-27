@@ -1141,6 +1141,19 @@ static CommonUtil *defaultUtil = nil;
     
 }
 
+
+/**
+ *  判断是否登录
+ *
+ *  @param needLogin YES:未登录就弹出登录页面， NO：未登录不弹出登录页面
+ *
+ *  @return YES：已经登录 NO：未登录
+ */
+- (BOOL)isLogin:(BOOL)needLogin{
+    return YES;
+}
+
+
 /**
  *  根据时间戳拼接时间字符串
  *

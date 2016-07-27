@@ -334,6 +334,16 @@ typedef void(^BackUserIdentifyState)(NSString* identifyState);
  */
 + (BOOL)sortOutNumber:(NSInteger)num TextField:(UITextField * )textField range:(NSRange)range string:(NSString *)string;
 
+
+/**
+ *  判断是否登录
+ *
+ *  @param needLogin YES:未登录就弹出登录页面， NO：未登录不弹出登录页面
+ *
+ *  @return YES：已经登录 NO：未登录
+ */
+- (BOOL)isLogin:(BOOL)needLogin;
+
 /**
  *  根据时间戳拼接时间字符串
  *

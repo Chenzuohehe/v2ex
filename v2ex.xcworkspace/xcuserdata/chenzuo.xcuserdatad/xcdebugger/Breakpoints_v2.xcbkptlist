@@ -19,13 +19,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "v2ex/Custom/CommonUtil.m"
-            timestampString = "490505564.908469"
+            filePath = "v2ex/Main/MainViewController.m"
+            timestampString = "491833609.431334"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1169"
-            endingLineNumber = "1169"
-            landmarkName = "+dateStringTime:"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "-mainView"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "v2ex/Left/LoginViewController.m"
+            timestampString = "491834527.781312"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "-backClicek:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

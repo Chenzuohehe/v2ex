@@ -7,6 +7,7 @@
 //
 
 #import "LeftMenuViewController.h"
+#import "CommonUtil.h"
 #import "Consts.h"
 
 @interface LeftMenuViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -40,6 +41,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    BOOL needLogin = [CommonUtil isLogin:YES];
     switch (indexPath.row) {
         case 0:
             NSLog(@"userCenter");

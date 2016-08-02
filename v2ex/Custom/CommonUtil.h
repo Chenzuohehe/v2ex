@@ -342,7 +342,7 @@ typedef void(^BackUserIdentifyState)(NSString* identifyState);
  *
  *  @return YES：已经登录 NO：未登录
  */
-- (BOOL)isLogin:(BOOL)needLogin;
++ (BOOL)isLogin:(BOOL)needLogin;
 
 /**
  *  根据时间戳拼接时间字符串

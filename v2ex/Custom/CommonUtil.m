@@ -1149,8 +1149,20 @@ static CommonUtil *defaultUtil = nil;
  *
  *  @return YES：已经登录 NO：未登录
  */
-- (BOOL)isLogin:(BOOL)needLogin{
-    return YES;
++ (BOOL)isLogin:(BOOL)needLogin{
+    
+    BOOL isLogin = NO;
+    if (isLogin) {
+        isLogin = YES;
+    } else {
+        //需要进行登录
+        if (needLogin) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"needlogin" object:nil];
+        }
+    }
+    
+    return !isLogin;
+    
 }
 
 

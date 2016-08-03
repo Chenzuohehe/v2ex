@@ -4,6 +4,22 @@
    <FileRef
       location = "group:v2ex.xcodeproj">
    </FileRef>
+   <Group
+      location = "group:image"
+      name = "image">
+      <FileRef
+         location = "group:Simulator Screen Shot 2016&#x5e74;8&#x6708;3&#x65e5; &#x4e0a;&#x5348;11.43.45.png">
+      </FileRef>
+      <FileRef
+         location = "group:Simulator Screen Shot 2016&#x5e74;8&#x6708;3&#x65e5; &#x4e0a;&#x5348;11.43.53.png">
+      </FileRef>
+      <FileRef
+         location = "group:Simulator Screen Shot 2016&#x5e74;8&#x6708;3&#x65e5; &#x4e0a;&#x5348;11.43.59.png">
+      </FileRef>
+      <FileRef
+         location = "group:Simulator Screen Shot 2016&#x5e74;8&#x6708;3&#x65e5; &#x4e0a;&#x5348;11.44.08.png">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>

@@ -30,7 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = @"帖子详情";
     [self loadHtmlData];
     [self loadReplies];
     [self registerCell];

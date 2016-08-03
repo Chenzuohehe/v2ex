@@ -59,7 +59,7 @@
     
     //监听
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(needlogin) name:@"needlogin" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mainView) name:@"toMainView" object:nil];
+    
     
     UIPanGestureRecognizer * moveGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panMove:)];
     [self.view addGestureRecognizer:moveGesture];
@@ -93,14 +93,6 @@
 //    [self.navigationController pushViewController:nextController animated:YES];
 }
 
-- (void)mainView{
-    MainViewController *nextController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
-    [self.navigationController pushViewController:nextController animated:YES];
-//    [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:nextController]
-//                                                 animated:YES];
-//    [self.sideMenuViewController hideMenuViewController];
-    
-}
 
 
 #pragma mark -

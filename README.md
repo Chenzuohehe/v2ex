@@ -7,4 +7,4 @@
 联系方式：chenzuo0730@outlook.com
 
 ##截图
-![](http://ww1.sinaimg.cn/mw690/e91c45bdgw1f6ggyu5pmfj21jo0nutfm.jpg)
+![](http://ww1.sinaimg.cn/large/e91c45bdgw1f6ggyu5pmfj21jo0nutfm.jpg)

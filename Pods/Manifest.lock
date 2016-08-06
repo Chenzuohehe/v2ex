@@ -16,6 +16,7 @@ PODS:
     - AFNetworking/NSURLSession
   - MBProgressHUD (0.9.2)
   - MJRefresh (3.1.0)
+  - MMMarkdown (0.5.4)
   - RESideMenu (4.0.7)
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - MBProgressHUD (~> 0.9.2)
   - MJRefresh
+  - MMMarkdown
   - RESideMenu (~> 4.0.7)
   - SDWebImage (~> 3.7.5)
   - TTTAttributedLabel
@@ -36,11 +38,12 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
+  MMMarkdown: 754f9154136d224178f51f2b2ba67a66a89d96ea
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
 
-PODFILE CHECKSUM: 622741ec2a3719cfe8a3fb65b7061b76a8c6c6d6
+PODFILE CHECKSUM: 84ae3d3d156435dd0c231a40b358b39fd5b75a0c
 
 COCOAPODS: 1.0.1

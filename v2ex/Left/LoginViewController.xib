@@ -18,20 +18,17 @@
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOp-bv-OuT">
                     <rect key="frame" x="30" y="149" width="540" height="40"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="查看" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhY-o5-OeS">
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ttg-7e-iel">
                             <rect key="frame" x="0.0" y="0.0" width="540" height="40"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                            <state key="normal" title="查询"/>
+                            <connections>
+                                <action selector="click:" destination="-1" eventType="touchUpInside" id="4Ph-aL-rA6"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="RhY-o5-OeS" secondAttribute="bottom" id="N7e-63-8iE"/>
                         <constraint firstAttribute="height" constant="40" id="bss-EL-auu"/>
-                        <constraint firstItem="RhY-o5-OeS" firstAttribute="leading" secondItem="iOp-bv-OuT" secondAttribute="leading" id="fP9-KL-MOJ"/>
-                        <constraint firstItem="RhY-o5-OeS" firstAttribute="top" secondItem="iOp-bv-OuT" secondAttribute="top" id="taq-UU-ina"/>
-                        <constraint firstAttribute="trailing" secondItem="RhY-o5-OeS" secondAttribute="trailing" id="uVA-4N-Ljo"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TYv-pJ-XQ0">

@@ -1400,8 +1400,8 @@ static CommonUtil *defaultUtil = nil;
             }
             //content
             if ([[cellNode getAttributeNamed:@"class"] isEqualToString:@"markdown_body"]) {
-//                NSLog(@"markdown_body:%@ \n\n %@",cellNode.allContents,cellNode.rawContents);
-                detail.content = cellNode.allContents;
+                NSLog(@"markdown_body:%@ \n\n %@",cellNode.allContents,cellNode.rawContents);
+                detail.content = cellNode.rawContents;
             }
             
             

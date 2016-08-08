@@ -33,6 +33,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)click:(id)sender {
+    
+    
+    
+}
 
 
 - (IBAction)backClicek:(id)sender {

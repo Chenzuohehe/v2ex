@@ -121,7 +121,7 @@
         return;
     }else{
         uri = [NSString stringWithFormat:@"https://www.v2ex.com%@",self.identifier];
-//        uri = @"https://www.v2ex.com/t/292768#reply74";
+//        uri = @"http://www.v2ex.com/t/297171#reply17";
 //        NSLog(@"%@",uri);
     }
     

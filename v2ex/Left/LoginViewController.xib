@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
+                <outlet property="userNameTextField" destination="VSl-jY-v8d" id="ZC2-sB-Lat"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,22 +16,6 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOp-bv-OuT">
-                    <rect key="frame" x="30" y="149" width="540" height="40"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ttg-7e-iel">
-                            <rect key="frame" x="0.0" y="0.0" width="540" height="40"/>
-                            <state key="normal" title="查询"/>
-                            <connections>
-                                <action selector="click:" destination="-1" eventType="touchUpInside" id="4Ph-aL-rA6"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="bss-EL-auu"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TYv-pJ-XQ0">
                     <rect key="frame" x="30" y="88" width="540" height="40"/>
                     <subviews>
@@ -70,6 +55,28 @@
                         <constraint firstAttribute="trailing" secondItem="VSl-jY-v8d" secondAttribute="trailing" id="XVh-Ud-Wo5"/>
                         <constraint firstItem="gDc-IC-WtV" firstAttribute="top" secondItem="TYv-pJ-XQ0" secondAttribute="top" id="axZ-Ph-NXS"/>
                         <constraint firstItem="0Ha-XP-0lx" firstAttribute="top" secondItem="TYv-pJ-XQ0" secondAttribute="top" id="e17-Jo-bLj"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOp-bv-OuT">
+                    <rect key="frame" x="30" y="149" width="540" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ttg-7e-iel">
+                            <rect key="frame" x="0.0" y="0.0" width="540" height="40"/>
+                            <state key="normal" title="登录">
+                                <color key="titleColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="click:" destination="-1" eventType="touchUpInside" id="4Ph-aL-rA6"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Ttg-7e-iel" secondAttribute="bottom" id="7qD-L3-LhJ"/>
+                        <constraint firstItem="Ttg-7e-iel" firstAttribute="top" secondItem="iOp-bv-OuT" secondAttribute="top" id="E2Z-5h-IWQ"/>
+                        <constraint firstAttribute="trailing" secondItem="Ttg-7e-iel" secondAttribute="trailing" id="KVq-LA-Iz3"/>
+                        <constraint firstAttribute="height" constant="40" id="bss-EL-auu"/>
+                        <constraint firstItem="Ttg-7e-iel" firstAttribute="leading" secondItem="iOp-bv-OuT" secondAttribute="leading" id="mUM-Pv-aVy"/>
                     </constraints>
                 </view>
             </subviews>

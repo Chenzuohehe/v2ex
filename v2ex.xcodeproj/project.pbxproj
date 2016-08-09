@@ -40,6 +40,7 @@
 		4E138DA51D25611600AE5FF3 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E138DA31D25611600AE5FF3 /* MainTableViewCell.xib */; };
 		4E2C958A1D331C13002AC366 /* ContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2C95881D331C13002AC366 /* ContentTableViewCell.m */; };
 		4E2C958B1D331C13002AC366 /* ContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E2C95891D331C13002AC366 /* ContentTableViewCell.xib */; };
+		4E6676D21D5A29C100F31A77 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6676D11D5A29C100F31A77 /* UserInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,8 @@
 		4E2C95871D331C13002AC366 /* ContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentTableViewCell.h; sourceTree = "<group>"; };
 		4E2C95881D331C13002AC366 /* ContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentTableViewCell.m; sourceTree = "<group>"; };
 		4E2C95891D331C13002AC366 /* ContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentTableViewCell.xib; sourceTree = "<group>"; };
+		4E6676D01D5A29C000F31A77 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		4E6676D11D5A29C100F31A77 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		98B082EBA9F9B3C027D6A094 /* libPods-v2ex.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-v2ex.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC72F0CA1CDF7644565E6CD /* Pods-v2ex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-v2ex.release.xcconfig"; path = "Pods/Target Support Files/Pods-v2ex/Pods-v2ex.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,6 +206,7 @@
 				040FC61C1D33AE9D008AC7D3 /* Lib */,
 				4E138D8F1D255DED00AE5FF3 /* Custom */,
 				4E138D901D255DED00AE5FF3 /* Left */,
+				04F15D311D388CB2002DC4A5 /* Model */,
 				4E138D911D255DED00AE5FF3 /* Right */,
 				4E138D7E1D255B3100AE5FF3 /* Main */,
 				0410FDC71D239D0A0080C4DC /* AppDelegate.h */,
@@ -252,8 +256,11 @@
 				04F15D391D388CB2002DC4A5 /* NodeModel.m */,
 				04F15D321D388CB2002DC4A5 /* DetailModel.h */,
 				04F15D331D388CB2002DC4A5 /* DetailModel.m */,
+				4E6676D01D5A29C000F31A77 /* UserInfo.h */,
+				4E6676D11D5A29C100F31A77 /* UserInfo.m */,
 			);
-			path = Model;
+			name = Model;
+			path = Main/Model;
 			sourceTree = "<group>";
 		};
 		4E138D7E1D255B3100AE5FF3 /* Main */ = {
@@ -266,7 +273,6 @@
 				04D4D5F01D2DF1BC002DC19B /* DetailViewController.m */,
 				04D4D5F11D2DF1BC002DC19B /* DetailViewController.xib */,
 				040FC61B1D33AD48008AC7D3 /* ViewModel */,
-				04F15D311D388CB2002DC4A5 /* Model */,
 				4E138D8E1D255D1000AE5FF3 /* Cell */,
 			);
 			path = Main;
@@ -539,6 +545,7 @@
 				04BEADA41D2615AC0058BF56 /* CommonUtil.m in Sources */,
 				4E138D981D255E7700AE5FF3 /* LeftMenuViewController.m in Sources */,
 				4E138D941D255E1C00AE5FF3 /* BaseViewController.m in Sources */,
+				4E6676D21D5A29C100F31A77 /* UserInfo.m in Sources */,
 				04F15D3B1D388CB2002DC4A5 /* FeedEntity.m in Sources */,
 				04F15D3A1D388CB2002DC4A5 /* DetailModel.m in Sources */,
 				04F15D3C1D388CB2002DC4A5 /* MemberModel.m in Sources */,

@@ -8,8 +8,10 @@
 
 #import "LoginViewController.h"
 #import "MainViewController.h"
+#import "CommonUtil.h"
 
 @interface LoginViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 
 @end
 
@@ -33,9 +35,39 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)setUserInfo
+{
+    ///api/members/show.json
+    
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString * userName = [userDefaults objectForKey:@"userName"];
+    
+    
+    NSString * uri =@"https://www.v2ex.com/api/members/show.json?username=";
+    uri = [NSString stringWithFormat:@"%@%@",uri,userName];
+    NSLog(@"%@",uri);
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:uri parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+    
+}
+
+
 - (IBAction)click:(id)sender {
     
-    
+    NSString * userName = self.userNameTextField.text;
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    if (![CommonUtil isEmpty:userName]) {
+        [userDefaults setObject:userName forKey:@"userName"];
+        [self setUserInfo];
+    }
     
 }
 

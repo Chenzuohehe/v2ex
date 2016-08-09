@@ -36,11 +36,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "v2ex/Left/LoginViewController.m"
-            timestampString = "491834527.781312"
+            timestampString = "492444491.499274"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46">
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "-setUserInfo"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

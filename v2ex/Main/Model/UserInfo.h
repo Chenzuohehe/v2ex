@@ -10,4 +10,11 @@
 
 @interface UserInfo : NSObject
 
+@property (copy , nonatomic) NSString * avatarLarge;
+@property (copy , nonatomic) NSString * github;
+@property (copy , nonatomic) NSString * identify;
+@property (copy , nonatomic) NSString * url;
+@property (copy , nonatomic) NSString * username;
+
+
 @end

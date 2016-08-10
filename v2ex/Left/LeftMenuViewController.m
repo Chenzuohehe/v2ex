@@ -29,7 +29,18 @@
     self.mainTableView.bounces = NO;
     self.mainTableView.separatorStyle = NO;
     self.view.backgroundColor = [UIColor clearColor];
+    
+    
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    NSLog(@"1");
+    NSLog(@"%@",self.userInfoDic);
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -41,6 +52,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"%@",self.userInfoDic);
     BOOL needLogin = [CommonUtil isLogin:YES];
     switch (indexPath.row) {
         case 0:
@@ -50,12 +62,9 @@
             NSLog(@"magCenter");
             break;
         case 2:
-            NSLog(@"我的收藏");
-            break;
-        case 3:
             NSLog(@"节点https://www.v2ex.com/api/nodes/all.json");
             break;
-        case 4:
+        case 3:
             NSLog(@"more");
             break;
         default:
@@ -79,7 +88,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex
 {
-    return 5;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -97,7 +106,7 @@
         cell.selectedBackgroundView = [[UIView alloc] init];
     }
     
-    NSArray *titles = @[@"个人中心", @"消息提醒", @"我的收藏", @"节点", @"更多"];
+    NSArray *titles = @[@"个人中心", @"我的收藏", @"节点", @"更多"];
     NSArray *images = @[@"userCenter", @"remind", @"collect", @"node", @"more"];
     cell.textLabel.text = titles[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];

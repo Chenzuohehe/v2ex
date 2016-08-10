@@ -14,6 +14,9 @@
 #import "RightMenuViewController.h"
 
 @interface AppDelegate ()
+{
+    RESideMenu * sideMenuViewController;
+}
 
 @end
 
@@ -32,7 +35,7 @@
     LeftMenuViewController *leftMenuViewController = [[LeftMenuViewController alloc] init];
     RightMenuViewController *rightMenuViewController = [[RightMenuViewController alloc] init];
     
-    RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:navigationController
+    sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:navigationController
                                                                     leftMenuViewController:leftMenuViewController
                                                                    rightMenuViewController:rightMenuViewController];
     sideMenuViewController.backgroundImage = [UIImage imageNamed:@"backGround"];
@@ -52,6 +55,20 @@
     [self.window makeKeyAndVisible];
     return YES;
 }
+
+
+-(void)sideMenu:(RESideMenu *)sideMenu willShowMenuViewController:(UIViewController *)menuViewController{
+    NSLog(@"willShowMenuViewController: %@", NSStringFromClass([menuViewController class]));
+    
+    NSUserDefaults * userDefaulys = [NSUserDefaults standardUserDefaults];
+    NSDictionary * userInfoDic = [userDefaulys objectForKey:@"userInfoDic"];
+    LeftMenuViewController * leftMianView = (LeftMenuViewController *)menuViewController;
+    leftMianView.userInfoDic = userInfoDic;
+    
+    sideMenuViewController.leftMenuViewController = leftMianView;
+    self.window.rootViewController = sideMenuViewController;
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

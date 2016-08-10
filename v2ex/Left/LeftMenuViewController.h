@@ -10,4 +10,6 @@
 
 @interface LeftMenuViewController : UIViewController
 
+
+@property (strong, nonatomic)NSDictionary * userInfoDic;
 @end

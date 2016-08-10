@@ -15,6 +15,8 @@
 #import "CZFPSLabel.h"
 #import "MJRefresh.h"
 
+#import "LeftMenuViewController.h"
+
 #import <UITableView+FDTemplateLayoutCell.h>
 
 @interface MainViewController ()
@@ -65,6 +67,26 @@
     [self.view addGestureRecognizer:moveGesture];
     
 }
+
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//    [super viewWillAppear:animated];
+//    NSUserDefaults * userDefaulys = [NSUserDefaults standardUserDefaults];
+//    NSDictionary * userInfoDic = [userDefaulys objectForKey:@"userInfoDic"];
+//    if (![CommonUtil dictIsEmpty:userInfoDic]) {
+//        NSLog(@"bu kong ");
+//        RESideMenu * main = (RESideMenu *)[UIApplication sharedApplication].keyWindow.window.rootViewController;
+//        LeftMenuViewController * leftMianView = (LeftMenuViewController *)main.leftMenuViewController;
+//        leftMianView.userInfoDic = userInfoDic;
+//        
+//        main.leftMenuViewController = leftMianView;
+//        [UIApplication sharedApplication].keyWindow.window.rootViewController = main;
+//        
+//    }else{
+//        NSLog(@"kong ");
+//    }
+//}
+
 
 - (void)panMove:(UIPanGestureRecognizer *)moveGesture
 {

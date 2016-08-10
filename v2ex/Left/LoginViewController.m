@@ -52,6 +52,9 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSLog(@"%@",responseObject);
+        NSDictionary * dict = responseObject;
+        [userDefaults setObject:dict forKey:@"userInfoDic"];
+        [self backClicek:nil];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         

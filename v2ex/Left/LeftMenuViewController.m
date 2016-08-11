@@ -38,6 +38,9 @@
     [super viewWillAppear:animated];
     NSLog(@"1");
     NSLog(@"%@",self.userInfoDic);
+//    UIView * headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+//    headView.backgroundColor = [UIColor redColor];
+//    self.mainTableView.tableHeaderView = headView;
 }
 
 

@@ -60,13 +60,17 @@
 -(void)sideMenu:(RESideMenu *)sideMenu willShowMenuViewController:(UIViewController *)menuViewController{
     NSLog(@"willShowMenuViewController: %@", NSStringFromClass([menuViewController class]));
     
-    NSUserDefaults * userDefaulys = [NSUserDefaults standardUserDefaults];
-    NSDictionary * userInfoDic = [userDefaulys objectForKey:@"userInfoDic"];
-    LeftMenuViewController * leftMianView = (LeftMenuViewController *)menuViewController;
-    leftMianView.userInfoDic = userInfoDic;
+    if ([[menuViewController class]isSubclassOfClass:[LeftMenuViewController class]]) {
+        NSUserDefaults * userDefaulys = [NSUserDefaults standardUserDefaults];
+        NSDictionary * userInfoDic = [userDefaulys objectForKey:@"userInfoDic"];
+        LeftMenuViewController * leftMianView = (LeftMenuViewController *)menuViewController;
+        leftMianView.userInfoDic = userInfoDic;
+        
+        sideMenuViewController.leftMenuViewController = leftMianView;
+        self.window.rootViewController = sideMenuViewController;
+    }
     
-    sideMenuViewController.leftMenuViewController = leftMianView;
-    self.window.rootViewController = sideMenuViewController;
+    
 }
 
 

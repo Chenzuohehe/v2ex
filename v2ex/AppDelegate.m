@@ -51,7 +51,7 @@
     
     
     
-    self.window.backgroundColor = [UIColor clearColor];
+    self.window.backgroundColor = [UIColor blackColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
